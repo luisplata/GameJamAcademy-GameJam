@@ -4,6 +4,7 @@ public class CircumferenceOfEnemy : MonoBehaviour, ICircumferenceOfEnemy
 {
     [SerializeField] private GameObject pointToObject;
     [SerializeField] private GameObject targetToOpponents;
+    [SerializeField] private int multiply;
     private IEmployee _employee;
 
     public void Configure(IEmployee employee)
