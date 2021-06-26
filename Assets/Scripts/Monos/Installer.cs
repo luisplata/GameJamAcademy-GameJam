@@ -10,6 +10,7 @@ public class Installer : MonoBehaviour
     [SerializeField] private GameObject skillInstantiate;
     [SerializeField] private string employeeid;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private GameObject objetivePlayer;
 
     private Employee _player;
     // Start is called before the first frame update
@@ -20,10 +21,16 @@ public class Installer : MonoBehaviour
         var employeeBuilder = _factory.Create(employeeid);
         var mov = new PlayerMovement(speedPlayer);
         _player = employeeBuilder.WithMovement(mov).WithSkillDefault(skillInstantiate).Build();
+        _player.SetObjetive(objetivePlayer.transform.position);
         _player.transform.position = Vector3.up * 5;
 
         //TODO lo que necesites del player
         virtualCamera.Follow = _player.transform;
         virtualCamera.LookAt = _player.transform;
+    }
+
+    public IEmployee GetPlayer()
+    {
+        return _player;
     }
 }

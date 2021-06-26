@@ -7,4 +7,6 @@ public interface IEmployee
     float GetVertical();
     bool GetInputSkill();
     Vector3 GetPosition();
+    Vector3 GetObjective();
+    Vector3 GetTargetToOpponents();
 }

@@ -7,11 +7,16 @@ public class Employee : MonoBehaviour, IEmployee
         [SerializeField] private float tolerance; 
         private IMovement _movement;
         private ISkill _skill;
+        private ICircumferenceOfEnemy _circumferenceOfEnemy;
+
         private Rigidbody rb;
+        private Vector3 _objective;
 
         private void Awake()
         {
                 rb = GetComponent<Rigidbody>();
+                _circumferenceOfEnemy = GetComponent<ICircumferenceOfEnemy>();
+                _circumferenceOfEnemy.Configure(this);
         }
 
         public string Id => id;
@@ -20,6 +25,7 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 _movement = mov;
                 _skill = sk;
+                _skill.Configure(this);
                 _movement.Configure(this);
         }
 
@@ -34,6 +40,8 @@ public class Employee : MonoBehaviour, IEmployee
                 {
                         _skill.ActionSkill();
                 }
+
+                _circumferenceOfEnemy.Rotate();
         }
 
         private void Update()
@@ -65,5 +73,20 @@ public class Employee : MonoBehaviour, IEmployee
         public Vector3 GetPosition()
         {
                 return gameObject.transform.position;
+        }
+
+        public Vector3 GetObjective()
+        {
+                return _objective;
+        }
+
+        public Vector3 GetTargetToOpponents()
+        {
+                return _circumferenceOfEnemy.GetPointToOpponents();
+        }
+
+        public void SetObjetive(Vector3 objetivePlayer)
+        {
+                _objective = objetivePlayer;
         }
 }

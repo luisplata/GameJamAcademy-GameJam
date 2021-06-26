@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,27 @@ public class SpawnerOpponents : MonoBehaviour
     [SerializeField] private EmployeesConfiguration configuration;
     [SerializeField] private float speedPlayer;
     [SerializeField] private GameObject skillInstantiate, pointToSpawn;
+    [SerializeField] private string model;
+    [SerializeField] private Installer _installer;
+    [SerializeField] private float maxDistance;
 
     private float startToCount;
     private int indexToCount;
     private EmployeesFactory _factory;
+    private int countToEnemys;
+
+    private void Start()
+    {
+        _factory = new EmployeesFactory(Instantiate(configuration));
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (indexToCount >= timeToSpawnInSecons.Count)
+        {
+            return;
+        }
         if (isStartToCount)
         {
             startToCount += Time.deltaTime;
@@ -27,7 +41,7 @@ public class SpawnerOpponents : MonoBehaviour
             indexToCount = 0;
             return;
         }
-        Debug.Log($"delta {startToCount}");
+        
         if (startToCount > timeToSpawnInSecons[indexToCount])
         {
             CreateOpponent();
@@ -37,10 +51,8 @@ public class SpawnerOpponents : MonoBehaviour
 
     private void CreateOpponent()
     {
-        _factory = new EmployeesFactory(Instantiate(configuration));
-        //player creating
-        var employeeBuilder = _factory.Create("default");
-        var mov = new OpponentMovement(speedPlayer);
+        var employeeBuilder = _factory.Create(model);
+        var mov = new OpponentMovement(speedPlayer, _installer.GetPlayer(), (maxDistance + indexToCount) * 10);
         var opponent = employeeBuilder.WithMovement(mov).WithSkillDefault(skillInstantiate).Build();
         opponent.transform.position = pointToSpawn.transform.position;
     }
