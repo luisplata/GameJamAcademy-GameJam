@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Opponent
+  - FxTemporaire
+  - Book
+  - Bullet
+  - Interac
+  - Goal
   layers:
   - Default
   - TransparentFX

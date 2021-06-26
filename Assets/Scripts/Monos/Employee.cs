@@ -9,9 +9,12 @@ public class Employee : MonoBehaviour, IEmployee
         [SerializeField]private List<Employee> _listOfOponents;
         [SerializeField] private GameObject book;
         [SerializeField] private float forceToLaunch;
+        [SerializeField] private Transform positionToSpawnBook;
+        [SerializeField] private InteractToTheAmbient interactToTheAmbient;
         private IMovement _movement;
         private ISkill _skill;
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
+        private IActionToPlayer _actionToPlayer;
         private Rigidbody rb;
         private Vector3 _objective;
 
@@ -21,6 +24,8 @@ public class Employee : MonoBehaviour, IEmployee
                 _circumferenceOfEnemy = GetComponent<ICircumferenceOfEnemy>();
                 _circumferenceOfEnemy.Configure(this);
                 _listOfOponents = new List<Employee>();
+                interactToTheAmbient.Configure(this);
+                _actionToPlayer = new ActionToPlayer(this);
         }
 
         public string Id => id;
@@ -55,13 +60,26 @@ public class Employee : MonoBehaviour, IEmployee
 
         private void Update()
         {
+                if (_actionToPlayer.CanInteractive() && _skill.HasPushSkill())
+                {
+                        _actionToPlayer.InteractiveToTheObject();
+                        return;
+                }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                        LaunchTheBook();
+                }
                 _movement.Move();
+        }
+
+        public void ConvertAli()
+        {
+                throw new NotImplementedException();
         }
 
         public void Move(Vector3 input)
         {
                 rb.velocity = input;
-                //rb.MovePosition(transform.position + input * Time.deltaTime);
         }
 
         public float GetHorizontal()
@@ -112,6 +130,16 @@ public class Employee : MonoBehaviour, IEmployee
                 instantiate.transform.position = positionToSpawnVFX;
         }
 
+        public void CanInteractive(GameObject otherGameObject)
+        {
+                _actionToPlayer.CanInteractive(otherGameObject);
+        }
+
+        public void CantInteractive()
+        {
+                _actionToPlayer.CantInteractive();
+        }
+
         public void SetObjetive(Vector3 objetivePlayer)
         {
                 _objective = objetivePlayer;
@@ -140,17 +168,26 @@ public class Employee : MonoBehaviour, IEmployee
 
         private void OnCollisionEnter(Collision other)
         {
-                if (other.gameObject.CompareTag("Untagged"))
+                if (other.gameObject.CompareTag("Bullet"))
                 {
-                        Debug.Log(other.gameObject.name);
                         LaunchTheBook();
                 }
+
+                if (other.gameObject.CompareTag("Book"))
+                {
+                        Destroy(other.gameObject);
+                }
+        }
+
+        public void DeliveryToBook()
+        {
+                throw new NotImplementedException();
         }
 
         private void LaunchTheBook()
         {
                 var bookInstantiate = Instantiate(book);
-                bookInstantiate.transform.position = GetPosition();
+                bookInstantiate.transform.position = positionToSpawnBook.position;
                 bookInstantiate.GetComponent<Rigidbody>().AddForce(Vector3.up * forceToLaunch);
         }
 }
