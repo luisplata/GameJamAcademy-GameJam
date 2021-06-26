@@ -4,4 +4,5 @@ public interface IMovement
 {
     void Move();
     void Configure(IEmployee employee);
+    float GetSpeed();
 }

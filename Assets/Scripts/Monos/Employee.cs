@@ -6,21 +6,27 @@ public class Employee : MonoBehaviour, IEmployee
 {
         [SerializeField] protected string id;
         [SerializeField] private float tolerance; 
-        [SerializeField]private List<Employee> _listOfOponents;
+        [SerializeField]private List<Employee> _listOfOpponents;
         [SerializeField] private GameObject book;
         [SerializeField] private float forceToLaunch;
+        [SerializeField] private Transform positionToSpawnBook;
+        [SerializeField] private InteractToTheAmbient interactToTheAmbient;
+        [SerializeField] private EmployeeMono employeeMono;
+        [SerializeField] private Rigidbody rb;
         private IMovement _movement;
         private ISkill _skill;
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
-        private Rigidbody rb;
+        private IActionToPlayer _actionToPlayer;
         private Vector3 _objective;
 
         private void Awake()
         {
-                rb = GetComponent<Rigidbody>();
                 _circumferenceOfEnemy = GetComponent<ICircumferenceOfEnemy>();
                 _circumferenceOfEnemy.Configure(this);
-                _listOfOponents = new List<Employee>();
+                _listOfOpponents = new List<Employee>();
+                interactToTheAmbient.Configure(this);
+                _actionToPlayer = new ActionToPlayer(this);
+                employeeMono.Config(this);
         }
 
         public string Id => id;
@@ -55,13 +61,30 @@ public class Employee : MonoBehaviour, IEmployee
 
         private void Update()
         {
+                if (_actionToPlayer.CanInteractive() && _skill.HasPushSkill())
+                {
+                        _actionToPlayer.InteractiveToTheObject();
+                        return;
+                }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                        LaunchTheBook();
+                }
                 _movement.Move();
         }
+
+        public void ConvertAli(GameObject ali)
+        {
+                var aliance = ali.GetComponent<Employee>();
+                aliance.SetComponents(new AliMovementHelp(_movement.GetSpeed()), aliance.GetSkill());
+                Debug.Log("Convert to Ali");
+        }
+
+        public List<Employee> ListOfOpponents => _listOfOpponents;
 
         public void Move(Vector3 input)
         {
                 rb.velocity = input;
-                //rb.MovePosition(transform.position + input * Time.deltaTime);
         }
 
         public float GetHorizontal()
@@ -96,7 +119,7 @@ public class Employee : MonoBehaviour, IEmployee
 
         public List<Employee> GetListToOtherOpponents()
         {
-                return _listOfOponents;
+                return _listOfOpponents;
         }
 
         public void CreateObject(GameObject figure, float force)
@@ -112,25 +135,19 @@ public class Employee : MonoBehaviour, IEmployee
                 instantiate.transform.position = positionToSpawnVFX;
         }
 
+        public void CanInteractive(GameObject otherGameObject)
+        {
+                _actionToPlayer.CanInteractive(otherGameObject);
+        }
+
+        public void CantInteractive()
+        {
+                _actionToPlayer.CantInteractive();
+        }
+
         public void SetObjetive(Vector3 objetivePlayer)
         {
                 _objective = objetivePlayer;
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-                if (other.gameObject.CompareTag("Opponent"))
-                {
-                        _listOfOponents.Add(other.gameObject.GetComponent<Employee>());
-                }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-                if (other.gameObject.CompareTag("Opponent"))
-                {
-                        _listOfOponents.Remove(other.gameObject.GetComponent<Employee>());
-                }
         }
 
         public Vector3 GetPositionToSpawn()
@@ -138,19 +155,15 @@ public class Employee : MonoBehaviour, IEmployee
                 return GetPosition() + Vector3.forward;
         }
 
-        private void OnCollisionEnter(Collision other)
+        public void DeliveryToBook()
         {
-                if (other.gameObject.CompareTag("Untagged"))
-                {
-                        Debug.Log(other.gameObject.name);
-                        LaunchTheBook();
-                }
+                Debug.Log("Terminaste");
         }
 
-        private void LaunchTheBook()
+        public void LaunchTheBook()
         {
                 var bookInstantiate = Instantiate(book);
-                bookInstantiate.transform.position = GetPosition();
+                bookInstantiate.transform.position = positionToSpawnBook.position;
                 bookInstantiate.GetComponent<Rigidbody>().AddForce(Vector3.up * forceToLaunch);
         }
 }

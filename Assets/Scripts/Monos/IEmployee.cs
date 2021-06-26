@@ -13,4 +13,10 @@ public interface IEmployee
     List<Employee> GetListToOtherOpponents();
     void CreateObject(GameObject figure, float force);
     void CreateObject(GameObject getFigure, Vector3 positionToSpawnVFX);
+    void CanInteractive(GameObject otherGameObject);
+    void CantInteractive();
+    void DeliveryToBook();
+    void ConvertAli(GameObject gameObject);
+    void LaunchTheBook();
+    List<Employee> ListOfOpponents { get; }
 }
