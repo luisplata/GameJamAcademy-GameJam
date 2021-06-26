@@ -71,6 +71,7 @@ public class Employee : MonoBehaviour, IEmployee
                         LaunchTheBook();
                 }
                 _movement.Move();
+                transform.position = rb.gameObject.transform.position;
         }
 
         public void ConvertAli(GameObject ali)
