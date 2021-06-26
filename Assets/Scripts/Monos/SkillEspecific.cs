@@ -8,11 +8,6 @@ public class SkillEspecific : Skill
     {
         go = gameObjectLocal;
     }
-    
-    public override bool HasPushSkill()
-    {
-        return _employee.GetInputSkill();
-    }
 
     public override void ActionSkill()
     {
