@@ -12,6 +12,8 @@ public class Installer : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private GameObject objetivePlayer;
     [SerializeField] private SpawnerOpponents spawner;
+    [SerializeField] private GeometricsFigureForTheGraphicConfiguration graphicConfiguration, tecnicalArtis;
+    [SerializeField] private float force;
 
     private Employee _player;
     // Start is called before the first frame update
@@ -37,7 +39,10 @@ public class Installer : MonoBehaviour
     {
         var employeeBuilder = _factory.Create(employeeid);
         var mov = new PlayerMovement(speedPlayer);
-        _player = employeeBuilder.WithMovement(mov).WithSkillDefault(skillInstantiate).Build();
+        var skillEpecificTechnicalArtist = new SkillEpecificTechnicalArtist(Instantiate(tecnicalArtis));
+        _player = employeeBuilder.WithMovement(mov).WithSkill(skillEpecificTechnicalArtist).Build();
+        skillEpecificTechnicalArtist.SetPositionToSpawnVFX(_player.GetPositionToSpawn());
+        _player.SetSkill(skillEpecificTechnicalArtist);
         _player.tag = "Player";
         _player.name = "Player";
         Debug.Log($"objetivePlayer.transform.position {objetivePlayer.transform.position}");

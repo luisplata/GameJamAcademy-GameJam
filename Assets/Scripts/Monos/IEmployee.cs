@@ -11,4 +11,6 @@ public interface IEmployee
     Vector3 GetObjective();
     Vector3 GetTargetToOpponents();
     List<Employee> GetListToOtherOpponents();
+    void CreateObject(GameObject figure, float force);
+    void CreateObject(GameObject getFigure, Vector3 positionToSpawnVFX);
 }

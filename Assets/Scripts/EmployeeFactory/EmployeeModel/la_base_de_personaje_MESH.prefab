@@ -1049,6 +1049,7 @@ MonoBehaviour:
   id: human
   tolerance: 0
   _listOfOponents: []
+  book: {fileID: 5412361290771375416, guid: 2c689e568efbaec429f291c15d938d67, type: 3}
 --- !u!1 &6097159113668519519
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b33921a7a4424b924a2ca46f35d1db, type: 3}
+  m_Name: GeometricsFigureForTheTecnicalArtistConfiguration
+  m_EditorClassIdentifier: 
+  listToGeometricGraphics:
+  - {fileID: 2752316660499198918, guid: 6e3135c512cc7984a9830ffcf4df8d19, type: 3}
+  - {fileID: 4653101885207647372, guid: 95a7fb173f03085498704f9bece5a7d3, type: 3}
+  - {fileID: 6623310395886867423, guid: 118f62dbf8c8f3d44bedd611e3ab7220, type: 3}
+  - {fileID: 1763211558721431088, guid: 8b419b0aa83462546ba6112af6efbc55, type: 3}
+  - {fileID: 6430931151453256809, guid: 818ffaaf80dfb4a4b8e735133e8eb299, type: 3}
