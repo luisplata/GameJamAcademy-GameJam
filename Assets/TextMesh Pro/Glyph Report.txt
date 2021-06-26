@@ -1,0 +1,13 @@
+Font: The Ruler Demo  Style: Regular
+Point Size: 111   SP/PD Ratio: 4,5%
+
+Characters included: 109/110
+Missing characters: 1
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+ID: 8203	Hex: 200B	Char [​]
+
+Characters excluded from packing:
+----------------------------------------

@@ -35,5 +35,4 @@ public class Animations : MonoBehaviour
     {
         animator.SetTrigger("give");
     }
-
 }
