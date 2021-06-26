@@ -6,18 +6,18 @@ using UnityEngine;
 public class SpawnerOpponents : MonoBehaviour
 {
     [SerializeField] private List<float> timeToSpawnInSecons;
-    [SerializeField] private bool isStartToCount;
     [SerializeField] private EmployeesConfiguration configuration;
     [SerializeField] private float speedPlayer;
     [SerializeField] private GameObject skillInstantiate, pointToSpawn;
     [SerializeField] private string model;
-    [SerializeField] private Installer _installer;
     [SerializeField] private float maxDistance;
 
     private float startToCount;
     private int indexToCount;
     private EmployeesFactory _factory;
     private int countToEnemys;
+    private bool isStartToCount;
+    private Installer _installer;
 
     private void Start()
     {
@@ -55,5 +55,11 @@ public class SpawnerOpponents : MonoBehaviour
         var mov = new OpponentMovement(speedPlayer, _installer.GetPlayer(), (maxDistance + indexToCount) * 10);
         var opponent = employeeBuilder.WithMovement(mov).WithSkillDefault(skillInstantiate).Build();
         opponent.transform.position = pointToSpawn.transform.position;
+    }
+
+    public void Configure(Installer installer)
+    {
+        isStartToCount = true;
+        _installer = installer;
     }
 }
