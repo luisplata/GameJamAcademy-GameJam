@@ -15,14 +15,14 @@ public class Animations : MonoBehaviour
         if (input != Vector3.zero)
             Move();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.F))
             Power();
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.G))
             Give();
 
-        if (Input.GetKeyDown(KeyCode.D))
-            Dance();
+        //if (Input.GetKeyDown(KeyCode.D))
+        //    Dance();
 
     }
 
@@ -38,10 +38,9 @@ public class Animations : MonoBehaviour
     {
         animator.SetTrigger("give");
     }
-	
-    private void Dance()
-    {
-        animator.SetTrigger("dance");
-    }
+    //private void Dance()
+    //{
+    //    animator.SetTrigger("dance");
+    //}
 
 }
