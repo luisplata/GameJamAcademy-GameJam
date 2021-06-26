@@ -23,4 +23,9 @@ public class SceneManager : MonoBehaviour
         Application.Quit();
         print("Quit Application");
     }
+
+    public void ShotBossScream()
+    {
+        ServiceLocator.Instance.GetService<ISoundBossScream>().ShotScreamBoss();
+    }
 }

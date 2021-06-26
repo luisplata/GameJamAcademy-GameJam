@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect
+public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossScream
 {
     [SerializeField] AudioSource m_AudioSource;
 
@@ -48,5 +48,19 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect
         m_AudioSourceAmbientDay.loop = true;
         M_SnapShotDay.TransitionTo(1f);
         m_AudioSourceAmbientDay.Play();
+    }
+
+    public void ShotScreamBoss()
+    {
+        List<AudioClip> boss = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_NPC_BossScreams[001]"))
+            {
+                boss.Add(clip);
+            }
+        }
+        var random = Random.Range(0, boss.Count);
+        PlayShortSoundOnce(boss[random].name);
     }
 }
