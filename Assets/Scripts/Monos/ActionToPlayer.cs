@@ -25,6 +25,7 @@ public class ActionToPlayer : IActionToPlayer
 
     public void CanInteractive(GameObject otherGameObject)
     {
+        _canInteractive = true;
         _gameObject = otherGameObject;
     }
 
@@ -37,7 +38,7 @@ public class ActionToPlayer : IActionToPlayer
 
         if (_gameObject.CompareTag("Interac"))
         {
-            _employee.ConvertAli();
+            _employee.ConvertAli(_gameObject);
         }
     }
 }

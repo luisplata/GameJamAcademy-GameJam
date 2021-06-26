@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Interac
   - Goal
+  - Ali
   layers:
   - Default
   - TransparentFX

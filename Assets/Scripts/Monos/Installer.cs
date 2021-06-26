@@ -14,8 +14,11 @@ public class Installer : MonoBehaviour
     [SerializeField] private SpawnerOpponents spawner;
     [SerializeField] private GeometricsFigureForTheGraphicConfiguration graphicConfiguration, tecnicalArtis;
     [SerializeField] private float force;
-
+    [SerializeField] private GameObject prefabToBellseboss;
+    
     private Employee _player;
+    private GameObject _bellsebossInstantiate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,8 @@ public class Installer : MonoBehaviour
         ConfigureCamera();
 
         spawner.Configure(this);
+
+        _bellsebossInstantiate = Instantiate(prefabToBellseboss);
     }
 
     private void ConfigureCamera()

@@ -16,7 +16,7 @@ public interface IEmployee
     void CanInteractive(GameObject otherGameObject);
     void CantInteractive();
     void DeliveryToBook();
-    void ConvertAli();
+    void ConvertAli(GameObject gameObject);
     void LaunchTheBook();
     List<Employee> ListOfOpponents { get; }
 }

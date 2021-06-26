@@ -15,4 +15,9 @@ public abstract class Movement : IMovement
     {
         _employee = employee;
     }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
 }

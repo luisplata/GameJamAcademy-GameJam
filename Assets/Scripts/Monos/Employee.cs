@@ -73,9 +73,11 @@ public class Employee : MonoBehaviour, IEmployee
                 _movement.Move();
         }
 
-        public void ConvertAli()
+        public void ConvertAli(GameObject ali)
         {
-                throw new NotImplementedException();
+                var aliance = ali.GetComponent<Employee>();
+                aliance.SetComponents(new AliMovementHelp(_movement.GetSpeed()), aliance.GetSkill());
+                Debug.Log("Convert to Ali");
         }
 
         public List<Employee> ListOfOpponents => _listOfOpponents;
@@ -155,7 +157,7 @@ public class Employee : MonoBehaviour, IEmployee
 
         public void DeliveryToBook()
         {
-                throw new NotImplementedException();
+                Debug.Log("Terminaste");
         }
 
         public void LaunchTheBook()
