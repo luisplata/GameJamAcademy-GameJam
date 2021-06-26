@@ -6,26 +6,27 @@ public class Employee : MonoBehaviour, IEmployee
 {
         [SerializeField] protected string id;
         [SerializeField] private float tolerance; 
-        [SerializeField]private List<Employee> _listOfOponents;
+        [SerializeField]private List<Employee> _listOfOpponents;
         [SerializeField] private GameObject book;
         [SerializeField] private float forceToLaunch;
         [SerializeField] private Transform positionToSpawnBook;
         [SerializeField] private InteractToTheAmbient interactToTheAmbient;
+        [SerializeField] private EmployeeMono employeeMono;
+        [SerializeField] private Rigidbody rb;
         private IMovement _movement;
         private ISkill _skill;
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
         private IActionToPlayer _actionToPlayer;
-        private Rigidbody rb;
         private Vector3 _objective;
 
         private void Awake()
         {
-                rb = GetComponent<Rigidbody>();
                 _circumferenceOfEnemy = GetComponent<ICircumferenceOfEnemy>();
                 _circumferenceOfEnemy.Configure(this);
-                _listOfOponents = new List<Employee>();
+                _listOfOpponents = new List<Employee>();
                 interactToTheAmbient.Configure(this);
                 _actionToPlayer = new ActionToPlayer(this);
+                employeeMono.Configic(this);
         }
 
         public string Id => id;
@@ -77,6 +78,8 @@ public class Employee : MonoBehaviour, IEmployee
                 throw new NotImplementedException();
         }
 
+        public List<Employee> ListOfOpponents => _listOfOpponents;
+
         public void Move(Vector3 input)
         {
                 rb.velocity = input;
@@ -114,7 +117,7 @@ public class Employee : MonoBehaviour, IEmployee
 
         public List<Employee> GetListToOtherOpponents()
         {
-                return _listOfOponents;
+                return _listOfOpponents;
         }
 
         public void CreateObject(GameObject figure, float force)
@@ -145,38 +148,9 @@ public class Employee : MonoBehaviour, IEmployee
                 _objective = objetivePlayer;
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-                if (other.gameObject.CompareTag("Opponent"))
-                {
-                        _listOfOponents.Add(other.gameObject.GetComponent<Employee>());
-                }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-                if (other.gameObject.CompareTag("Opponent"))
-                {
-                        _listOfOponents.Remove(other.gameObject.GetComponent<Employee>());
-                }
-        }
-
         public Vector3 GetPositionToSpawn()
         {
                 return GetPosition() + Vector3.forward;
-        }
-
-        private void OnCollisionEnter(Collision other)
-        {
-                if (other.gameObject.CompareTag("Bullet"))
-                {
-                        LaunchTheBook();
-                }
-
-                if (other.gameObject.CompareTag("Book"))
-                {
-                        Destroy(other.gameObject);
-                }
         }
 
         public void DeliveryToBook()
@@ -184,7 +158,7 @@ public class Employee : MonoBehaviour, IEmployee
                 throw new NotImplementedException();
         }
 
-        private void LaunchTheBook()
+        public void LaunchTheBook()
         {
                 var bookInstantiate = Instantiate(book);
                 bookInstantiate.transform.position = positionToSpawnBook.position;

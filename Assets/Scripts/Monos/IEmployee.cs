@@ -17,4 +17,6 @@ public interface IEmployee
     void CantInteractive();
     void DeliveryToBook();
     void ConvertAli();
+    void LaunchTheBook();
+    List<Employee> ListOfOpponents { get; }
 }
