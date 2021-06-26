@@ -21,11 +21,14 @@ public class Animations : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
             Give();
 
+        if (Input.GetKeyDown(KeyCode.D))
+            Dance();
+
     }
 
     private void Move()
     {
-            animator.SetFloat("speed",input.magnitude);      
+        animator.SetFloat("speed",input.magnitude);      
     }
     private void Power()
     {
@@ -34,6 +37,10 @@ public class Animations : MonoBehaviour
     private void Give()
     {
         animator.SetTrigger("give");
+    }
+    private void Dance()
+    {
+        animator.SetTrigger("dance");
     }
 
 }
