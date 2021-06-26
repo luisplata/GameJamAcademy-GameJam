@@ -26,7 +26,7 @@ public class Employee : MonoBehaviour, IEmployee
                 _listOfOpponents = new List<Employee>();
                 interactToTheAmbient.Configure(this);
                 _actionToPlayer = new ActionToPlayer(this);
-                employeeMono.Configic(this);
+                employeeMono.Config(this);
         }
 
         public string Id => id;

@@ -6,7 +6,7 @@ public class EmployeeMono : MonoBehaviour
 {
     private IEmployee _employee;
 
-    public void Configic(IEmployee employee)
+    public void Config(IEmployee employee)
     {
         _employee = employee;
     }
