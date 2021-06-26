@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7994395466622826135
+--- !u!1 &4696002167728995044
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7994395466622824811}
-  - component: {fileID: 7994395466622824810}
-  - component: {fileID: 7994395466622826133}
-  - component: {fileID: 7994395466622826132}
-  - component: {fileID: 8597777413666801397}
+  - component: {fileID: 5359386617889103966}
+  - component: {fileID: 9065612109517959163}
+  - component: {fileID: 6497411576643771185}
+  - component: {fileID: 5614551428355627686}
+  - component: {fileID: 5614551428355627687}
   m_Layer: 0
-  m_Name: Cables
+  m_Name: Plant_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7994395466622824811
+--- !u!4 &5359386617889103966
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994395466622826135}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0866456, y: 0.18492681, z: 2.022}
+  m_GameObject: {fileID: 4696002167728995044}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.34, y: 2.44, z: 0.21496916}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7994395466622824810
+--- !u!33 &9065612109517959163
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994395466622826135}
-  m_Mesh: {fileID: 6068128760482188544, guid: b98c31f7f0707b649a880817122476b8, type: 3}
---- !u!23 &7994395466622826133
+  m_GameObject: {fileID: 4696002167728995044}
+  m_Mesh: {fileID: -8365129639449590315, guid: 4cbfba422760f974fa2e66a5c0a4e130, type: 3}
+--- !u!23 &6497411576643771185
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994395466622826135}
+  m_GameObject: {fileID: 4696002167728995044}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5734326682706993611, guid: b98c31f7f0707b649a880817122476b8, type: 3}
+  - {fileID: -5734326682706993611, guid: 4cbfba422760f974fa2e66a5c0a4e130, type: 3}
+  - {fileID: 1052683738766743247, guid: 4cbfba422760f974fa2e66a5c0a4e130, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,26 +84,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7994395466622826132
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994395466622826135}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1540388, y: 0.4821777, z: 0.25068775}
-  m_Center: {x: -0.103308186, y: -0.022864386, z: -0.02702342}
---- !u!54 &8597777413666801397
+--- !u!54 &5614551428355627686
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994395466622826135}
+  m_GameObject: {fileID: 4696002167728995044}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -112,3 +100,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &5614551428355627687
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696002167728995044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.80702704, y: 1.4373657, z: 0.80702704}
+  m_Center: {x: 0, y: 0.7186828, z: 0}
