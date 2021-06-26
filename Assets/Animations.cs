@@ -16,22 +16,17 @@ public class Animations : MonoBehaviour
             Move();
 
         if (Input.GetKeyDown(KeyCode.Space))
-            Power1();
+            Power();
 
-        if (Input.GetKeyDown(KeyCode.F))
-            Power2();
     }
 
     private void Move()
     {
             animator.SetFloat("speed",input.magnitude);      
     }
-    private void Power1()
+    private void Power()
     {
-        animator.SetTrigger("power1");
+        animator.SetTrigger("power");
     }
-    private void Power2()
-    {
-        animator.SetTrigger("power2");
-    }
+
 }

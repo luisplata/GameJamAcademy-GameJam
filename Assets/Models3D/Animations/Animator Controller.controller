@@ -20,16 +20,16 @@ AnimatorStateMachine:
     m_Position: {x: 280, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4043524734043060396}
-    m_Position: {x: 40, y: -40, z: 0}
+    m_Position: {x: -40, y: -40, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -7234589441491069762}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 60, y: 50, z: 0}
+  m_AnyStatePosition: {x: -20, y: 50, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 60, y: -120, z: 0}
+  m_ExitPosition: {x: -20, y: -120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -4384875647795039988}
 --- !u!1101 &-8492106208303142877
@@ -244,7 +244,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Frisbee Throw
+  m_Name: Power
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -258,7 +258,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c9d7a0a465d543d418fa8f7bf1f27c1f, type: 2}
+  m_Motion: {fileID: 7400000, guid: af6dccb3c5658884c87cfb161c9ab617, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
