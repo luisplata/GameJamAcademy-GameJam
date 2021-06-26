@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Animations : MonoBehaviour
+{
+   
+    public Animator animator;
+    private Vector3 input;
+
+    private void Update()
+    {
+        input = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+
+        if (input != Vector3.zero)
+            Move();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            Power1();
+
+        if (Input.GetKeyDown(KeyCode.F))
+            Power2();
+    }
+
+    private void Move()
+    {
+            animator.SetFloat("speed",input.magnitude);      
+    }
+    private void Power1()
+    {
+        animator.SetTrigger("power1");
+    }
+    private void Power2()
+    {
+        animator.SetTrigger("power2");
+    }
+}
