@@ -38,6 +38,9 @@ public class Installer : MonoBehaviour
         var employeeBuilder = _factory.Create(employeeid);
         var mov = new PlayerMovement(speedPlayer);
         _player = employeeBuilder.WithMovement(mov).WithSkillDefault(skillInstantiate).Build();
+        _player.tag = "Player";
+        _player.name = "Player";
+        Debug.Log($"objetivePlayer.transform.position {objetivePlayer.transform.position}");
         _player.SetObjetive(objetivePlayer.transform.position);
         _player.transform.position = Vector3.up * 5;
     }

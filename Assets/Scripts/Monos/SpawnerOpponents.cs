@@ -55,6 +55,8 @@ public class SpawnerOpponents : MonoBehaviour
         var mov = new OpponentMovement(speedPlayer, _installer.GetPlayer(), (maxDistance + indexToCount) * 40);
         var opponent = employeeBuilder.WithMovement(mov).WithSkillDefault(skillInstantiate).Build();
         opponent.transform.position = pointToSpawn.transform.position;
+        opponent.tag = "Opponent";
+        opponent.name = "Opponent";
     }
 
     public void Configure(Installer installer)

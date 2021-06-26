@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 public class OpponentMovement : Movement
 {
@@ -15,9 +16,17 @@ public class OpponentMovement : Movement
     public override void Move()
     {
         var diff = _player.GetTargetToOpponents() - _employee.GetPosition();
-        if (diff.sqrMagnitude > _maxDistanceToClose)
+        var listToOtherOpponents = _employee.GetListToOtherOpponents();
+        if (diff.sqrMagnitude < _maxDistanceToClose && listToOtherOpponents.Count > 0)
         {
-            _employee.Move(diff.normalized * speed);            
+            diff = Vector3.zero;
+            foreach (var opponent in listToOtherOpponents)
+            {
+                diff += (_employee.GetPosition() - opponent.gameObject.transform.position);
+            }
+            speed /= speed;
+            diff.y = 0;
         }
+        _employee.Move(diff.normalized * speed);
     }
 }

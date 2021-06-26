@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public interface IEmployee
 {
@@ -9,4 +10,5 @@ public interface IEmployee
     Vector3 GetPosition();
     Vector3 GetObjective();
     Vector3 GetTargetToOpponents();
+    List<Employee> GetListToOtherOpponents();
 }
