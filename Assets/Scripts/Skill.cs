@@ -6,7 +6,9 @@
     {
         _employee = employee;
     }
-    
-    public abstract bool HasPushSkill();
+    public bool HasPushSkill()
+    {
+        return _employee.GetInputSkill();
+    }
     public abstract void ActionSkill();
 }
