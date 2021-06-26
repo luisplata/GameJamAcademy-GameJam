@@ -822,7 +822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4014051920861043557}
   m_Layer: 0
-  m_Name: Artista_mesh_terminado_mirando_izquierda
+  m_Name: Artista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
