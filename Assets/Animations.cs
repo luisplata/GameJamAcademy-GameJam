@@ -21,9 +21,6 @@ public class Animations : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
             Give();
 
-        //if (Input.GetKeyDown(KeyCode.D))
-        //    Dance();
-
     }
 
     private void Move()
@@ -38,9 +35,5 @@ public class Animations : MonoBehaviour
     {
         animator.SetTrigger("give");
     }
-    //private void Dance()
-    //{
-    //    animator.SetTrigger("dance");
-    //}
 
 }
