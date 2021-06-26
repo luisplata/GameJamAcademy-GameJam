@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Employee : MonoBehaviour, IEmployee
@@ -8,6 +9,7 @@ public class Employee : MonoBehaviour, IEmployee
         private IMovement _movement;
         private ISkill _skill;
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
+        [SerializeField]private List<Employee> _listOfOponents; 
 
         private Rigidbody rb;
         private Vector3 _objective;
@@ -17,6 +19,7 @@ public class Employee : MonoBehaviour, IEmployee
                 rb = GetComponent<Rigidbody>();
                 _circumferenceOfEnemy = GetComponent<ICircumferenceOfEnemy>();
                 _circumferenceOfEnemy.Configure(this);
+                _listOfOponents = new List<Employee>();
         }
 
         public string Id => id;
@@ -85,8 +88,29 @@ public class Employee : MonoBehaviour, IEmployee
                 return _circumferenceOfEnemy.GetPointToOpponents();
         }
 
+        public List<Employee> GetListToOtherOpponents()
+        {
+                return _listOfOponents;
+        }
+
         public void SetObjetive(Vector3 objetivePlayer)
         {
                 _objective = objetivePlayer;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+                if (other.gameObject.CompareTag("Opponent"))
+                {
+                        _listOfOponents.Add(other.gameObject.GetComponent<Employee>());
+                }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+                if (other.gameObject.CompareTag("Opponent"))
+                {
+                        _listOfOponents.Remove(other.gameObject.GetComponent<Employee>());
+                }
         }
 }
