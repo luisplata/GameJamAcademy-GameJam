@@ -53,7 +53,7 @@ public class SpawnerOpponents : MonoBehaviour
     {
         var employeeBuilder = _factory.Create(model);
         var mov = new OpponentMovement(speedPlayer, _installer.GetPlayer(), (maxDistance + indexToCount) * 40);
-        var opponent = employeeBuilder.WithMovement(mov).WithSkillDefault(skillInstantiate).Build();
+        var opponent = employeeBuilder.WithMovement(mov).WithSkill(new SkillEspecific(new GameObject())).Build();
         opponent.transform.position = pointToSpawn.transform.position;
         opponent.tag = "Opponent";
         opponent.name = "Opponent";
@@ -61,7 +61,7 @@ public class SpawnerOpponents : MonoBehaviour
 
     public void Configure(Installer installer)
     {
-        isStartToCount = true;
+        //isStartToCount = true;
         _installer = installer;
     }
 }

@@ -16,9 +16,9 @@ public class EmployeeBuilder
         return this;
     }
     
-    public EmployeeBuilder WithSkillDefault(GameObject skillIns)
+    public EmployeeBuilder WithSkillDefault(GeometricsFigureForTheGraphicConfiguration configuration, float force)
     {
-        _skill = new SkillEspecific(skillIns);
+        _skill = new SkillForGraphic(configuration, force);
         return this;
     }
 

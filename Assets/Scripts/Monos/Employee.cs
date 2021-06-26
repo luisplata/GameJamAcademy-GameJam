@@ -6,11 +6,12 @@ public class Employee : MonoBehaviour, IEmployee
 {
         [SerializeField] protected string id;
         [SerializeField] private float tolerance; 
+        [SerializeField]private List<Employee> _listOfOponents;
+        [SerializeField] private GameObject book;
+        [SerializeField] private float forceToLaunch;
         private IMovement _movement;
         private ISkill _skill;
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
-        [SerializeField]private List<Employee> _listOfOponents; 
-
         private Rigidbody rb;
         private Vector3 _objective;
 
@@ -35,6 +36,11 @@ public class Employee : MonoBehaviour, IEmployee
         public ISkill GetSkill()
         {
                 return _skill;
+        }
+        
+        public void SetSkill(ISkill s)
+        {
+                _skill = s;
         }
 
         private void FixedUpdate()
@@ -93,6 +99,19 @@ public class Employee : MonoBehaviour, IEmployee
                 return _listOfOponents;
         }
 
+        public void CreateObject(GameObject figure, float force)
+        {
+                var instantiate = Instantiate(figure);
+                instantiate.transform.position = GetPosition() + Vector3.forward;
+                instantiate.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.forward * force);
+        }
+
+        public void CreateObject(GameObject figure, Vector3 positionToSpawnVFX)
+        {
+                var instantiate = Instantiate(figure);
+                instantiate.transform.position = positionToSpawnVFX;
+        }
+
         public void SetObjetive(Vector3 objetivePlayer)
         {
                 _objective = objetivePlayer;
@@ -112,5 +131,26 @@ public class Employee : MonoBehaviour, IEmployee
                 {
                         _listOfOponents.Remove(other.gameObject.GetComponent<Employee>());
                 }
+        }
+
+        public Vector3 GetPositionToSpawn()
+        {
+                return GetPosition() + Vector3.forward;
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+                if (other.gameObject.CompareTag("Untagged"))
+                {
+                        Debug.Log(other.gameObject.name);
+                        LaunchTheBook();
+                }
+        }
+
+        private void LaunchTheBook()
+        {
+                var bookInstantiate = Instantiate(book);
+                bookInstantiate.transform.position = GetPosition();
+                bookInstantiate.GetComponent<Rigidbody>().AddForce(Vector3.up * forceToLaunch);
         }
 }
