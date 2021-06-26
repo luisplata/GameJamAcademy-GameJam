@@ -13,7 +13,6 @@ public class Installer : MonoBehaviour
     [SerializeField] private GameObject objetivePlayer;
     [SerializeField] private SpawnerOpponents spawner;
     [SerializeField] private GeometricsFigureForTheGraphicConfiguration graphicConfiguration, tecnicalArtis;
-    [SerializeField] private float force;
     [SerializeField] private GameObject prefabToBellseboss;
     
     private Employee _player;
@@ -42,6 +41,7 @@ public class Installer : MonoBehaviour
 
     private void CreatingPlayer()
     {
+        employeeid = PlayerPrefs.GetString("character");
         var employeeBuilder = _factory.Create(employeeid);
         var mov = new PlayerMovement(speedPlayer);
         var skillEpecificTechnicalArtist = new SkillEpecificTechnicalArtist(Instantiate(tecnicalArtis));

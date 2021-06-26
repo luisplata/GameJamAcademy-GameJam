@@ -7,8 +7,9 @@ public class SceneManager : MonoBehaviour
 {
     [SerializeField] private int sceneIndex;
 
-    public void LoadScene()
+    public void LoadScene(string character)
     {
+        PlayerPrefs.SetString("character",character);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
     }
     
