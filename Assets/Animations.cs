@@ -18,6 +18,9 @@ public class Animations : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             Power();
 
+        if (Input.GetKeyDown(KeyCode.F))
+            Give();
+
     }
 
     private void Move()
@@ -27,6 +30,10 @@ public class Animations : MonoBehaviour
     private void Power()
     {
         animator.SetTrigger("power");
+    }
+    private void Give()
+    {
+        animator.SetTrigger("give");
     }
 
 }
