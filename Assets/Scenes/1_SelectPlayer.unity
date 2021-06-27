@@ -284,8 +284,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5496584, y: 0.7798998}
   m_AnchorMax: {x: 1, y: 0.7798998}
-  m_AnchoredPosition: {x: -94.5, y: -136.25}
-  m_SizeDelta: {x: -71, y: 230}
+  m_AnchoredPosition: {x: -46.6196, y: -136.25}
+  m_SizeDelta: {x: -93.2392, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35865196
 MonoBehaviour:
@@ -334,13 +334,25 @@ MonoBehaviour:
       - m_Target: {fileID: 35865199}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Artist
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 35865199}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: SelectYourCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &35865197
@@ -394,6 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 2
+  characterIndex: 1
 --- !u!1 &37008763
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,7 +2968,7 @@ GameObject:
   - component: {fileID: 559893449}
   - component: {fileID: 559893448}
   m_Layer: 5
-  m_Name: PlayAgainButton
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2995,6 +3008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
+  characterIndex: 0
 --- !u!114 &559893449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6487,8 +6501,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7798998}
   m_AnchorMax: {x: 0.3996584, y: 0.7798998}
-  m_AnchoredPosition: {x: 128.5, y: -136.331}
-  m_SizeDelta: {x: -41, y: 230}
+  m_AnchoredPosition: {x: 89.09586, y: -136.331}
+  m_SizeDelta: {x: -75.8007, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982123519
 MonoBehaviour:
@@ -6537,13 +6551,25 @@ MonoBehaviour:
       - m_Target: {fileID: 982123522}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 982123522}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: SelectYourCharacter
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: tecnicalArtist
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &982123520
@@ -6597,6 +6623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 2
+  characterIndex: 0
 --- !u!1 &987638866
 GameObject:
   m_ObjectHideFlags: 0
