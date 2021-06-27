@@ -41,7 +41,7 @@ public class Installer : MonoBehaviour
 
     private void CreatingPlayer()
     {
-        employeeid = PlayerPrefs.GetString("character");
+        //employeeid = PlayerPrefs.GetString("character");
         var employeeBuilder = _factory.Create(employeeid);
         var mov = new PlayerMovement(speedPlayer);
         var skillEpecificTechnicalArtist = new SkillEpecificTechnicalArtist(Instantiate(tecnicalArtis));

@@ -957,6 +957,7 @@ MonoBehaviour:
   interactToTheAmbient: {fileID: 7905361112662077175}
   employeeMono: {fileID: 6769198426743052493}
   rb: {fileID: 3697330695970670753}
+  anim: {fileID: 6253896180301052101}
 --- !u!114 &6769198426743052493
 MonoBehaviour:
   m_ObjectHideFlags: 0

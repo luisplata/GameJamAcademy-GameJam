@@ -13,6 +13,7 @@ public class Employee : MonoBehaviour, IEmployee
         [SerializeField] private InteractToTheAmbient interactToTheAmbient;
         [SerializeField] private EmployeeMono employeeMono;
         [SerializeField] private Rigidbody rb;
+        [SerializeField] private Animator anim;
         private IMovement _movement;
         private ISkill _skill;
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
@@ -86,6 +87,8 @@ public class Employee : MonoBehaviour, IEmployee
         public void Move(Vector3 input)
         {
                 rb.velocity = input;
+                anim.Play("Base Layer");
+                anim.SetFloat("speed", input.magnitude);
         }
 
         public float GetHorizontal()
