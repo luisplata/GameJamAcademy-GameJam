@@ -18,6 +18,7 @@ public class SpawnerOpponents : MonoBehaviour
     private int countToEnemys;
     private bool isStartToCount;
     private Installer _installer;
+    private Employee _ali;
 
     private void Start()
     {
@@ -60,6 +61,10 @@ public class SpawnerOpponents : MonoBehaviour
 
     private void CreateAli()
     {
+        if (_ali != null)
+        {
+            return;
+        }
         Skill skillEpecific = null;
         if (_installer.GetPlayer().GetId() == _installer.GetArtistId().Value)
         {
@@ -81,6 +86,7 @@ public class SpawnerOpponents : MonoBehaviour
         opponent.tag = "Ali";
         opponent.name = "Ali";
         indexToCountAli++;
+        _ali = opponent;
     }
 
     private void CreateOpponent()

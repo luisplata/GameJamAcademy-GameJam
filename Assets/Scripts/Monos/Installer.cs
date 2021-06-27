@@ -41,11 +41,11 @@ public class Installer : MonoBehaviour
 
     private void CreatingPlayer()
     {
-        if (PlayerPrefs.GetString("character") == "1")
+        if (PlayerPrefs.GetInt("character") == 1)
         {
             employeeid = artist;
         }
-        else if(PlayerPrefs.GetString("character") == "0")
+        else if(PlayerPrefs.GetInt("character") == 0)
         {
             employeeid = technicalArtist;
         }

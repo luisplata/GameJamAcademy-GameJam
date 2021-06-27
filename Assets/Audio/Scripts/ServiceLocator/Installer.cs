@@ -8,6 +8,7 @@ namespace Audio
     public class Installer : MonoBehaviour
     {
         [SerializeField] PlaySoundsInUnity m_PlaySoundsInUnity;
+        [SerializeField] private StatusGameMono statis;
 
         private void Awake()
         {
@@ -19,7 +20,7 @@ namespace Audio
 
             ServiceLocator.Instance.RegisterService<ITriggerSoundEffect>(m_PlaySoundsInUnity); //Servicio que voy a consumir.
             ServiceLocator.Instance.RegisterService<ISoundBossScream>(m_PlaySoundsInUnity);
-            //ServiceLocator.Instance.RegisterService<ISoundsMouseHoverGUI>(m_PlaySoundsInUnity);
+            ServiceLocator.Instance.RegisterService<IStatusGame>(statis);
 
             DontDestroyOnLoad(gameObject);
         }

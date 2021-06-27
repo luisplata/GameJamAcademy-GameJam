@@ -9224,7 +9224,7 @@ GameObject:
   - component: {fileID: 8838888849032977766}
   m_Layer: 0
   m_Name: WFX_FlameThrower Big Alt Looped
-  m_TagString: Untagged
+  m_TagString: Interac
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

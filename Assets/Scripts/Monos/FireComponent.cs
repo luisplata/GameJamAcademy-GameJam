@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FireComponent : MonoBehaviour
 {
@@ -22,5 +23,23 @@ public class FireComponent : MonoBehaviour
     private void Update()
     {
         rb.velocity = normalized * (300 * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            //Game Over
+            ServiceLocator.Instance.GetService<IStatusGame>().GameOver();
+        }
+        if (other.gameObject.CompareTag("Interac") || other.gameObject.CompareTag("Opponent"))
+        {
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Untagged"))
+        {
+            other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 200);
+        }
     }
 }

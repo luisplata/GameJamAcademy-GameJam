@@ -1665,6 +1665,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 33719394, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 33719395, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 958286650563787096, guid: ed774abea3835b64b89b326823880bfd, type: 3}
       propertyPath: m_Name
       value: ServiceLocator

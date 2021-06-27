@@ -83,10 +83,6 @@ public class Employee : MonoBehaviour, IEmployee
 
         private void Update()
         {
-                /*if (Input.GetKeyDown(KeyCode.Space))
-                {
-                        LaunchTheBook();
-                }*/
                 _movement.Move();
                 transform.position = rb.gameObject.transform.position;
         }
