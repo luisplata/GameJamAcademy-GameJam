@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     Button thisButton;
-    [SerializeField] PlaySoundsInUnity playSoundsInUnity;
 
     private bool m_MouseOver = false;
 
@@ -15,10 +14,6 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         //Get A ref for the audio source...
         thisButton = GetComponent<Button>();
-        if(playSoundsInUnity == null)
-        {
-            playSoundsInUnity = GetComponent<PlaySoundsInUnity>();
-        }
 
     }
 
@@ -52,15 +47,14 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     }
     private void OnMouseHover()
     {
-
-        playSoundsInUnity.PlayHoverMouseSounds();
+        
+        ServiceLocator.Instance.GetService<IUiSound>().PlayHoverMouseSounds();
         Debug.Log("MouseHovering");
     }
 
     private void OnMouseClick()
     {
-
-        playSoundsInUnity.PlayMouseClickSounds();
+        ServiceLocator.Instance.GetService<IUiSound>().PlayMouseClickSounds();
         Debug.Log("MouseClick");
     }
 

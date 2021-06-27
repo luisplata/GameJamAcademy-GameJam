@@ -28,7 +28,7 @@ public class PlayFootstepsForCharacters : MonoBehaviour
     {
         m_AudioSource.playOnAwake = false;
         m_AudioSource.outputAudioMixerGroup = m_Output;
-        m_AudioSource.spatialBlend = 0.5f;
+        m_AudioSource.spatialBlend = 0.9f;
         m_AudioSource.pitch = Random.Range(0.98f, 1.2f);
         m_AudioSource.volume = Random.Range(m_Volume - m_VolumeVariation, m_Volume + m_VolumeVariation);
         m_AudioSource.PlayOneShot(m_PlaySoundsInUnity.SelectFootStepsSounds());

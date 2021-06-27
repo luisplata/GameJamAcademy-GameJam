@@ -415,6 +415,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441509485}
   m_CullTransparentMesh: 1
+--- !u!1 &545583370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 33719394, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+  m_PrefabInstance: {fileID: 958286650507160026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &706676559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1052,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
+--- !u!1 &1251101849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717716205, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+  m_PrefabInstance: {fileID: 958286650507160026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1251101850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251101849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862a52a2048948b5b96984cf03b2e5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 545583370}
 --- !u!1 &1583821811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ServiceLocator
       objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787097, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: statis
+      value: 
+      objectReference: {fileID: 1251101850}
     - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1721,5 +1748,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 33719398, guid: ed774abea3835b64b89b326823880bfd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ed774abea3835b64b89b326823880bfd, type: 3}
