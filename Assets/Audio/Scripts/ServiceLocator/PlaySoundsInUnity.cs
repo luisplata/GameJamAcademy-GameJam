@@ -91,6 +91,21 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         PlayShortSoundOnce(footStep[random].name);
     }
 
+
+    public AudioClip SelectArcadeSound()
+    {
+        List<AudioClip> arcadeSound = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_ITEMS_Arcade"))
+            {
+                arcadeSound.Add(clip);
+            }
+        }
+        var random = Random.Range(0, arcadeSound.Count);
+
+        return arcadeSound[random];
+    }
     public void PlayAmbientSound()
     {
         throw new System.NotImplementedException();
