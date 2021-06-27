@@ -99,9 +99,16 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 return id.Value;
         }
-
+        private void Rotating (float horizontal, float vertical)
+        {
+                Vector3 targetDirection = new Vector3(horizontal, 0f, vertical);
+                Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+                Quaternion newRotation = Quaternion.Lerp(rb.rotation, targetRotation, 100 * Time.deltaTime);
+                rb.MoveRotation(newRotation);
+        }
         public void Move(Vector3 input)
         {
+                Rotating(input.x, input.z);
                 input.y = rb.velocity.y;
                 rb.velocity = input;
                 anim.SetFloat("speed", input.magnitude);

@@ -37,8 +37,8 @@ public class Installer : MonoBehaviour
 
     private void ConfigureCamera()
     {
-        virtualCamera.Follow = _player.transform;
-        virtualCamera.LookAt = _player.transform;
+        virtualCamera.Follow = _player.GetPointForTheCamera();
+        virtualCamera.LookAt = _player.GetPointForTheCamera();
     }
 
     private void CreatingPlayer()

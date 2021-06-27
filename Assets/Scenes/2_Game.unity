@@ -1906,6 +1906,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6294101893112326643, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: m_Name
       value: Bellseboss_Idle
@@ -3107,6 +3111,10 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 2000173013}
+    - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
+      propertyPath: employeeid
+      value: 
+      objectReference: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
     - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: tecnicalArtis
       value: 
