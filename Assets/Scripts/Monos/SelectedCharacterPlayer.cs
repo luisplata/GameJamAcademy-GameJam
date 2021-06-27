@@ -2,7 +2,7 @@
 public class SelectedCharacterPlayer : MonoBehaviour
 {
     [SerializeField] private Animator ani;
-    private bool isFinishAnimation;
+    private bool isFinishAnimation = true;
 
     void OnMouseOver()
     {
@@ -10,7 +10,9 @@ public class SelectedCharacterPlayer : MonoBehaviour
         Debug.Log("Mouse is over GameObject.");
         if (isFinishAnimation)
         {
-            ani.SetTrigger("power");
+            isFinishAnimation = false;
+            print("hola");
+            ani.SetTrigger("dance");
         }
     }
 
