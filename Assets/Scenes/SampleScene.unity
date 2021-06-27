@@ -13113,8 +13113,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: model
-      value: Artist
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
     - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: _installer
       value: 
@@ -13258,8 +13258,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: force
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
+      propertyPath: artist
+      value: 
+      objectReference: {fileID: 11400000, guid: 852bc15ad8ad70d44ad4a3c2e6c58010, type: 2}
     - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: camera
       value: 
@@ -13270,8 +13274,8 @@ PrefabInstance:
       objectReference: {fileID: 1169255844}
     - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: employeeid
-      value: Artist
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: 852bc15ad8ad70d44ad4a3c2e6c58010, type: 2}
     - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: tecnicalArtis
       value: 
@@ -13284,6 +13288,10 @@ PrefabInstance:
       propertyPath: objetivePlayer
       value: 
       objectReference: {fileID: 1648157324}
+    - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
+      propertyPath: technicalArtist
+      value: 
+      objectReference: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
     - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: prefabToBellseboss
       value: 

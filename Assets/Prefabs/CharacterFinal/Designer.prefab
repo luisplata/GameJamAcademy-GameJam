@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2161133014072905578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.729, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5839901089455171080}
@@ -138,8 +138,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.3145323, y: 1.3746482, z: 0.20630068}
+  m_Center: {x: 0.026364133, y: -0.037464917, z: 0.03330204}
 --- !u!114 &9148132209545690311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +599,36 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0015198439, y: -0.07728273, z: 0.04157292}
     m_Extent: {x: 0.293343, y: 0.7459494, z: 0.20169595}
   m_DirtyAABB: 0
+--- !u!1 &5995305556247964543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2508618317057477682}
+  m_Layer: 0
+  m_Name: PositionToSpawnSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2508618317057477682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5995305556247964543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.738, y: 0.921, z: 0.041}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5839901089455171080}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6097561768748401573
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +761,7 @@ Transform:
   - {fileID: 2115334843698644636}
   - {fileID: 7313105917212430337}
   - {fileID: 4806524270349024418}
+  - {fileID: 2508618317057477682}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -765,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d8f2111d0478983dfba4b664e45cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Artist
+  id: {fileID: 11400000, guid: 852bc15ad8ad70d44ad4a3c2e6c58010, type: 2}
   tolerance: 0
   _listOfOpponents: []
   book: {fileID: 5412361290771375416, guid: 2c689e568efbaec429f291c15d938d67, type: 3}
@@ -775,6 +806,7 @@ MonoBehaviour:
   employeeMono: {fileID: -2200028481490015216}
   rb: {fileID: 21901468124671343}
   anim: {fileID: 6233481495977452622}
+  pointToSpawnSkill: {fileID: 2508618317057477682}
 --- !u!114 &-4332374909211724627
 MonoBehaviour:
   m_ObjectHideFlags: 0

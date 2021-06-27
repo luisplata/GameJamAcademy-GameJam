@@ -1,5 +1,6 @@
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Installer : MonoBehaviour
 {
@@ -8,13 +9,14 @@ public class Installer : MonoBehaviour
     [SerializeField] private EmployeesConfiguration configuration;
     [SerializeField] private float speedPlayer;
     [SerializeField] private GameObject skillInstantiate;
-    [SerializeField] private string employeeid;
+    [SerializeField] private EmployeeScriptable employeeid, artist, technicalArtist;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private GameObject objetivePlayer;
     [SerializeField] private SpawnerOpponents spawner;
     [SerializeField] private GeometricsFigureForTheGraphicConfiguration graphicConfiguration, tecnicalArtis;
     [SerializeField] private GameObject prefabToBellseboss;
-    
+    [SerializeField] private float force;
+
     private Employee _player;
     private GameObject _bellsebossInstantiate;
 
@@ -44,10 +46,18 @@ public class Installer : MonoBehaviour
         //employeeid = PlayerPrefs.GetString("character");
         var employeeBuilder = _factory.Create(employeeid);
         var mov = new PlayerMovement(speedPlayer);
-        var skillEpecificTechnicalArtist = new SkillEpecificTechnicalArtist(Instantiate(tecnicalArtis));
-        _player = employeeBuilder.WithMovement(mov).WithSkill(skillEpecificTechnicalArtist).Build();
-        skillEpecificTechnicalArtist.SetPositionToSpawnVFX(_player.GetPositionToSpawn());
-        _player.SetSkill(skillEpecificTechnicalArtist);
+        Skill skillEpecific = null;
+        if (employeeid == artist)
+        {
+            skillEpecific = new SkillForGraphic(Instantiate(graphicConfiguration), force);
+        }else if (employeeid == technicalArtist)
+        {
+            skillEpecific = new SkillEpecificTechnicalArtist(Instantiate(tecnicalArtis));
+        }
+        Assert.IsNotNull(skillEpecific, "el objecto de skill no debe de ir nulo");
+        _player = employeeBuilder.WithMovement(mov).WithSkill(skillEpecific).Build();
+        skillEpecific.Configure(_player);
+        _player.SetSkill(skillEpecific);
         _player.tag = "Player";
         _player.name = "Player";
         Debug.Log($"objetivePlayer.transform.position {objetivePlayer.transform.position}");

@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d8f2111d0478983dfba4b664e45cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: tecnicalArtist
+  id: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
   tolerance: 0
   _listOfOpponents: []
   book: {fileID: 5412361290771375416, guid: 2c689e568efbaec429f291c15d938d67, type: 3}
@@ -1020,6 +1020,7 @@ MonoBehaviour:
   employeeMono: {fileID: 5655212366641190256}
   rb: {fileID: 1605802881128219532}
   anim: {fileID: 8726791920749664375}
+  pointToSpawnSkill: {fileID: 0}
 --- !u!114 &5655212366641190256
 MonoBehaviour:
   m_ObjectHideFlags: 0

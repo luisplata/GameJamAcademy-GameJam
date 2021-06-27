@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Employee : MonoBehaviour, IEmployee
+public enum EmployeeId
 {
-        [SerializeField] protected string id;
+        artist,
+        technicalArtist
+}
+public class Employee : MonoBehaviour, IEmployee
+{ 
+        [SerializeField] public EmployeeScriptable id;
         [SerializeField] private float tolerance; 
         [SerializeField]private List<Employee> _listOfOpponents;
         [SerializeField] private GameObject book;
@@ -14,6 +19,7 @@ public class Employee : MonoBehaviour, IEmployee
         [SerializeField] private EmployeeMono employeeMono;
         [SerializeField] private Rigidbody rb;
         [SerializeField] private Animator anim;
+        [SerializeField] private Transform pointToSpawnSkill;
         private IMovement _movement;
         private ISkill _skill;
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
@@ -30,7 +36,7 @@ public class Employee : MonoBehaviour, IEmployee
                 employeeMono.Config(this);
         }
 
-        public string Id => id;
+        public string Id => id.Value;
 
         public void SetComponents(IMovement mov, ISkill sk)
         {
@@ -126,11 +132,20 @@ public class Employee : MonoBehaviour, IEmployee
                 return _listOfOpponents;
         }
 
+        private GameObject figure;
+        private float force;
         public void CreateObject(GameObject figure, float force)
         {
+                this.figure = figure;
+                this.force = force;
+                anim.SetTrigger("power");
+        }
+
+        private void CreateObjectFinishAnimation()
+        {
                 var instantiate = Instantiate(figure);
-                instantiate.transform.position = GetPosition() + Vector3.forward;
-                instantiate.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.forward * force);
+                instantiate.transform.position = pointToSpawnSkill.position;
+                instantiate.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * force);
         }
 
         public void CreateObject(GameObject figure, Vector3 positionToSpawnVFX)

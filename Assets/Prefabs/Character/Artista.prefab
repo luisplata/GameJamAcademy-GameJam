@@ -268,7 +268,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2948221794687495302}
-  m_LocalRotation: {x: -0, y: 0.86889523, z: -0, w: 0.49499598}
+  m_LocalRotation: {x: -0, y: 0.99526864, z: -0, w: 0.09716126}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611d8f2111d0478983dfba4b664e45cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Artist
+  id: {fileID: 0}
   tolerance: 0
   _listOfOpponents: []
   book: {fileID: 5775526779257619255, guid: e9051dd36d1d3854694bbf9f59bd558b, type: 3}
@@ -958,6 +958,7 @@ MonoBehaviour:
   employeeMono: {fileID: 6769198426743052493}
   rb: {fileID: 3697330695970670753}
   anim: {fileID: 6253896180301052101}
+  pointToSpawnSkill: {fileID: 0}
 --- !u!114 &6769198426743052493
 MonoBehaviour:
   m_ObjectHideFlags: 0
