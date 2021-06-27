@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Employees Configuration
   m_EditorClassIdentifier: 
   employees:
-  - {fileID: -2082168686099124354, guid: 5beaa516cf1313542844f72a1ce3ba05, type: 3}
-  - {fileID: -1240054571376196350, guid: 1c57e47df2acbff40a239e2ce1bb6883, type: 3}
+  - {fileID: -4431187940852437638, guid: fe4d1704b43065e4899416d08adebd81, type: 3}
+  - {fileID: 328241222509509737, guid: 28d373f8f48d09049be2e6c725fb05f2, type: 3}
