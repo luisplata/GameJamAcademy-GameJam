@@ -26,6 +26,6 @@ public class OpponentMovement : Movement
             }
             diff.y = 0;
         }
-        _employee.Move(diff * speed);
+        _employee.Move(diff.normalized * speed);
     }
 }

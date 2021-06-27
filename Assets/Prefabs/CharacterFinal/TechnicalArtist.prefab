@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointToObject: {fileID: 3538916490165128642}
   targetToOpponents: {fileID: 4445299697401675746}
-  multiply: 5
+  multiply: 0
   rb: {fileID: 8545638530660508547}
 --- !u!114 &1660725719
 MonoBehaviour:

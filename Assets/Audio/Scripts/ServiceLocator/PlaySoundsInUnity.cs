@@ -190,4 +190,19 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
 
         PlayShortSoundOnce(bossScream[random].name);
     }
+
+    public void SoundToSupport()
+    {
+        List<AudioClip> bossScream = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_NPC_AllySupport"))
+            {
+                bossScream.Add(clip);
+            }
+        }
+        var random = Random.Range(0, bossScream.Count);
+
+        PlayShortSoundOnce(bossScream[random].name);
+    }
 }

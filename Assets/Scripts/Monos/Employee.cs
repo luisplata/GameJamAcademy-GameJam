@@ -66,6 +66,8 @@ public class Employee : MonoBehaviour, IEmployee
                 _skill = s;
         }
 
+        private float deltaTimeLocalToSkill;
+        private float timeToSpawn = 10;
         private void FixedUpdate()
         {
                 if (_actionToPlayer.CanInteractive() && _skill.HasPushSkill() && isThePlayer)
@@ -76,6 +78,21 @@ public class Employee : MonoBehaviour, IEmployee
                 if (_skill.HasPushSkill() && isThePlayer)
                 {
                         _skill.ActionSkill();
+                }
+
+                if (!isThePlayer)
+                {
+                        deltaTimeLocalToSkill += Time.deltaTime;
+                        if (deltaTimeLocalToSkill >= timeToSpawn)
+                        {
+                                deltaTimeLocalToSkill = 0;
+                                _skill.ActionSkill();
+                                timeToSpawn = Random.Range(timeToSpawn, timeToSpawn + 10);
+                                if (!IsEnemy)
+                                {
+                                        ServiceLocator.Instance.GetService<ISoundToCrash>().SoundToSupport();
+                                }
+                        }
                 }
 
                 _circumferenceOfEnemy.Rotate();
