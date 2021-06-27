@@ -6,6 +6,5 @@ public class PlayAmbientSound : MonoBehaviour
 {
     private void Start()
     {
-        ServiceLocator.Instance.GetService<ITriggerSoundEffect>().PlayAmbientSound();
     }
 }
