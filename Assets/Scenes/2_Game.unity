@@ -1912,11 +1912,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: timeMaxToRespawnFire
-      value: 7
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: timeMinToRespawnFire
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6294101893112326643, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: m_Name
