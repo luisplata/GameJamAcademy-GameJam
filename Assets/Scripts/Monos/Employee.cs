@@ -242,7 +242,7 @@ public class Employee : MonoBehaviour, IEmployee
 
         public void FinishAnimationToFinishGame()
         {
-                Debug.Log("terminaste");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(3);
         }
 
         public void LaunchTheBook()
