@@ -10,7 +10,7 @@ public class SpawnerOpponents : MonoBehaviour
     [SerializeField] private EmployeesConfiguration configuration;
     [SerializeField] private float speedPlayer;
     [SerializeField] private GameObject skillInstantiate, pointToSpawn;
-    [SerializeField] private string model;
+    [SerializeField] private EmployeeScriptable model;
     [SerializeField] private float maxDistance;
 
     private float startToCount, startToCountAli;

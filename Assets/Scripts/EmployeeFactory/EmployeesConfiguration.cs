@@ -17,8 +17,8 @@ public class EmployeesConfiguration : ScriptableObject
         }
     }
 
-    public EmployeeBuilder GetEmployeePrefabById(string id)
+    public EmployeeBuilder GetEmployeePrefabById(EmployeeScriptable id)
     {
-        return new EmployeeBuilder(idToEmployee[id]);
+        return new EmployeeBuilder(idToEmployee[id.Value]);
     }
 }

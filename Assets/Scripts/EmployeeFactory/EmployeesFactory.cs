@@ -9,7 +9,7 @@ public class EmployeesFactory
         this.employeesConfiguration = employeesConfiguration;
     }
         
-    public EmployeeBuilder Create(string id)
+    public EmployeeBuilder Create(EmployeeScriptable id)
     {
         var prefab = employeesConfiguration.GetEmployeePrefabById(id);
         return prefab;
