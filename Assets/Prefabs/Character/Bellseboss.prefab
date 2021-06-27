@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6600335674669248801}
   - component: {fileID: 9205975894371967675}
   - component: {fileID: 478832342881825822}
+  - component: {fileID: 661811506942996871}
   m_Layer: 0
   m_Name: Bellseboss
   m_TagString: Goal
@@ -59,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6293907483898580082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5820613, y: 4.62, z: -2.8969502}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8474444284140671037}
@@ -165,3 +166,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &661811506942996871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6293907483898580082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca631dbe380de3245ab3fdff0e2c6350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeMaxToRespawnFire: 2
+  timeMinToRespawnFire: 5
+  fireObject: {fileID: 3782318487990413850, guid: 71a47725a3cd9e94989695b136ecbf72, type: 3}
+  pointToSpawn: {fileID: 8474444284140671037}
