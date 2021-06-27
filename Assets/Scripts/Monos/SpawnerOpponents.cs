@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,10 +27,22 @@ public class SpawnerOpponents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (indexToCount >= timeToSpawnInSeconds.Count || indexToCountAli >= timeToSpawnAliInSeconds.Count)
+        if (indexToCountAli < timeToSpawnAliInSeconds.Count)
         {
-            return;
+            if (startToCountAli > timeToSpawnAliInSeconds[indexToCountAli])
+            {
+                CreateAli();
+            }
         }
+
+        if (indexToCount < timeToSpawnInSeconds.Count)
+        {
+            if (startToCount > timeToSpawnInSeconds[indexToCount])
+            {
+                CreateOpponent();
+            }
+        }
+        
         if (isStartToCount)
         {
             startToCount += Time.deltaTime;
@@ -44,18 +54,8 @@ public class SpawnerOpponents : MonoBehaviour
             startToCountAli = 0;
             indexToCount = 0;
             indexToCountAli = 0;
-            return;
         }
         
-        if (startToCount > timeToSpawnInSeconds[indexToCount])
-        {
-            CreateOpponent();
-        }
-        
-        if (startToCountAli > timeToSpawnAliInSeconds[indexToCountAli])
-        {
-            CreateAli();
-        }
     }
 
     private void CreateAli()
@@ -88,7 +88,8 @@ public class SpawnerOpponents : MonoBehaviour
         var opponent = employeeBuilder.WithMovement(mov).WithSkill(skillEpecific).Build();
         //changed color to the opponents
         //changed to Red
-        opponent.transform.position = pointToSpawn.transform.position;
+        var posintToSpawn = pointsToSpawn[Random.Range(0,pointsToSpawn.Count)].transform.position;
+        opponent.transform.position = posintToSpawn;
         opponent.tag = "Opponent";
         opponent.name = "Opponent";
         indexToCount++;

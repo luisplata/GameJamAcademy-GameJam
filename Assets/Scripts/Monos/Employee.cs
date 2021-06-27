@@ -106,9 +106,15 @@ public class Employee : MonoBehaviour, IEmployee
                 Quaternion newRotation = Quaternion.Lerp(rb.rotation, targetRotation, 100 * Time.deltaTime);
                 rb.MoveRotation(newRotation);
         }
+
+        private Vector3 lastInput;
         public void Move(Vector3 input)
         {
-                Rotating(input.x, input.z);
+                if (input.sqrMagnitude != 0)
+                {
+                        lastInput = input;
+                }
+                Rotating(lastInput.x, lastInput.z);
                 input.y = rb.velocity.y;
                 rb.velocity = input;
                 anim.SetFloat("speed", input.magnitude);
