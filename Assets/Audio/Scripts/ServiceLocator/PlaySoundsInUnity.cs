@@ -160,6 +160,20 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
 
         return projectileSounds[random];
     }
+    public AudioClip SelectBossSound()
+    {
+        List<AudioClip> bossScream = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_NPC_BossScreams[001]"))
+            {
+                bossScream.Add(clip);
+            }
+        }
+        var random = Random.Range(0, bossScream.Count);
+
+        return bossScream[random];
+    }
     #endregion
 
 }
