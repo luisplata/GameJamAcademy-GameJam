@@ -475,7 +475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5062482534297824410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1.143}
+  m_LocalPosition: {x: -1.9, y: 1, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6634634574534193993}
@@ -646,6 +646,7 @@ MonoBehaviour:
   timeMinToRespawnFire: 5
   fireObject: {fileID: 4263916156845922173, guid: a7eac71ccae4b72498b7e6001c2c8784, type: 3}
   pointToSpawn: {fileID: 9093475108072959171}
+  ani: {fileID: 788930563416222003}
 --- !u!1 &6451248105320257252
 GameObject:
   m_ObjectHideFlags: 0

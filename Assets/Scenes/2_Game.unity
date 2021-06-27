@@ -1908,7 +1908,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
+      propertyPath: timeMaxToRespawnFire
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
+      propertyPath: timeMinToRespawnFire
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6294101893112326643, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: m_Name
@@ -2160,6 +2168,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1281104057685521734, guid: 3b7b1aaf98af57e4086c1b0e47494ea0, type: 3}
   m_PrefabInstance: {fileID: 130410833}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &136795121
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 958286650563787096, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_Name
+      value: ServiceLocator
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.7800055
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 958286650563787102, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed774abea3835b64b89b326823880bfd, type: 3}
 --- !u!1 &137003078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,7 +3256,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
     - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: speedPlayer
-      value: 5
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7211822525148487435, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: tecnicalArtis
@@ -31064,6 +31129,10 @@ PrefabInstance:
       propertyPath: model
       value: 
       objectReference: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
+    - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
+      propertyPath: speedPlayer
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: pointsToSpawnAli
       value: 

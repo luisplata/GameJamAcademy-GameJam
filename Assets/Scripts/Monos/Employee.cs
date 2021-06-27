@@ -116,7 +116,7 @@ public class Employee : MonoBehaviour, IEmployee
                 }
                 Rotating(lastInput.x, lastInput.z);
                 input.y = rb.velocity.y;
-                rb.velocity = input;
+                rb.velocity = input * Time.deltaTime;
                 anim.SetFloat("speed", input.magnitude);
         }
 

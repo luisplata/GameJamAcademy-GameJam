@@ -13,6 +13,7 @@ public class CircumferenceOfEnemy : MonoBehaviour, ICircumferenceOfEnemy
     {
         _employee = employee;
         randomCircle = Random.insideUnitSphere * multiply;
+        randomCircle.y = _employee.GetPosition().y;
     }
 
     public Vector3 GetPointToOpponents()

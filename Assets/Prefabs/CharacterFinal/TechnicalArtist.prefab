@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointToObject: {fileID: 3538916490165128642}
   targetToOpponents: {fileID: 4445299697401675746}
-  multiply: 30
+  multiply: 5
   rb: {fileID: 8545638530660508547}
 --- !u!1 &8511464231091998718
 GameObject:
