@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coffee_cup
+    second: {fileID: 2100000, guid: 3837658ed8d48d34cae773105e5e1a57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: e98e8d98010ed434a9c5dcc6b5b6f30e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -19,7 +29,11 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'mixamorig:LeftUpLeg'
+      : position error = 2.238594 mm\n\t'mixamorig:LeftFoot' : position error = 23.168591
+      mm\n\t'mixamorig:RightUpLeg' : position error = 2.267180 mm\n\t'mixamorig:RightFoot'
+      : position error = 23.171093 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
