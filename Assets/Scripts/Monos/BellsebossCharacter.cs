@@ -9,6 +9,7 @@ public class BellsebossCharacter : MonoBehaviour, IBellsebossCharacter
     [SerializeField] private float timeMaxToRespawnFire, timeMinToRespawnFire;
     [SerializeField] private GameObject fireObject;
     [SerializeField] private Transform pointToSpawn;
+    [SerializeField] private Animator ani;
     
     private LogicToBellseboss logic;
 
@@ -28,6 +29,12 @@ public class BellsebossCharacter : MonoBehaviour, IBellsebossCharacter
     }
 
     public void FireObject()
+    {
+        ani.SetTrigger("power");
+        ServiceLocator.Instance.GetService<ISoundBossScream>().ShotScreamBoss();
+    }
+
+    public void StartInstantiateObject()
     {
         var instantiate = Instantiate(fireObject);
         instantiate.transform.position = pointToSpawn.position;

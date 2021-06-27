@@ -31,8 +31,6 @@ public class Installer : MonoBehaviour
         ConfigureCamera();
 
         spawner.Configure(this);
-
-        _bellsebossInstantiate = Instantiate(prefabToBellseboss);
     }
 
     private void ConfigureCamera()
