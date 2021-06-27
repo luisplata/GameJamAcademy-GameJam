@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4222351805769631005}
   - component: {fileID: -336595312832420690}
   - component: {fileID: -244974657848051755}
+  - component: {fileID: -7842796204324728838}
+  - component: {fileID: 3064831731214229948}
   m_Layer: 0
   m_Name: IcoSphere
   m_TagString: Untagged
@@ -112,3 +114,27 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7842796204324728838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420740774360474824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ee8df8182144444b468e05e454a5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3064831731214229948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420740774360474824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6c12b0b6ab4e2e952c304028a1f238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

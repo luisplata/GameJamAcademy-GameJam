@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4862418339220723429}
   - component: {fileID: 2960130441957573840}
   - component: {fileID: 389834930402979739}
+  - component: {fileID: 725209049269427922}
+  - component: {fileID: -6566184612641540880}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -112,3 +114,27 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &725209049269427922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375473950867535664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ee8df8182144444b468e05e454a5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6566184612641540880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375473950867535664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6c12b0b6ab4e2e952c304028a1f238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

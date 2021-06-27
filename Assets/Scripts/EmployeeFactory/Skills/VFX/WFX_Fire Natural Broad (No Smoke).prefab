@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4653101885193915884}
   - component: {fileID: 4653101885193892940}
   - component: {fileID: 4653101885202162030}
+  - component: {fileID: 8860299951950663291}
+  - component: {fileID: 1679877652349160127}
   m_Layer: 0
   m_Name: WFX_Fire Natural Broad (No Smoke)
   m_TagString: Untagged
@@ -4651,6 +4653,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &8860299951950663291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4653101885207647372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ee8df8182144444b468e05e454a5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1679877652349160127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4653101885207647372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6c12b0b6ab4e2e952c304028a1f238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4653101885207647374
 GameObject:
   m_ObjectHideFlags: 0

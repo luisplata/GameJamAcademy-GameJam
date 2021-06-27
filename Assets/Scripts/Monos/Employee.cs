@@ -145,13 +145,19 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 var instantiate = Instantiate(figure);
                 instantiate.transform.position = pointToSpawnSkill.position;
-                instantiate.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * force);
+                instantiate.GetComponent<Rigidbody>().AddForce(Vector3.forward * force,ForceMode.Impulse);
         }
 
-        public void CreateObject(GameObject figure, Vector3 positionToSpawnVFX)
+        public void CreateObject(GameObject figuree)
+        {
+                this.figure = figuree;
+                anim.SetTrigger("power");
+        }
+
+        public void TechnicalArtistCreatedFigureToFinishAnimation()
         {
                 var instantiate = Instantiate(figure);
-                instantiate.transform.position = positionToSpawnVFX;
+                instantiate.transform.position = pointToSpawnSkill.transform.position;
         }
 
         public void CanInteractive(GameObject otherGameObject)
