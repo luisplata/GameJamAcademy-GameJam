@@ -933,7 +933,7 @@ MonoBehaviour:
   pointToObject: {fileID: 4136925113767115328}
   targetToOpponents: {fileID: 3172708315137196338}
   multiply: 30
-  rb: {fileID: 0}
+  rb: {fileID: 1050103618814328487}
 --- !u!114 &-2200028481490015216
 MonoBehaviour:
   m_ObjectHideFlags: 0
