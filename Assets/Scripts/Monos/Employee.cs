@@ -86,8 +86,8 @@ public class Employee : MonoBehaviour, IEmployee
 
         public void Move(Vector3 input)
         {
+                input.y = rb.velocity.y;
                 rb.velocity = input;
-                anim.Play("Base Layer");
                 anim.SetFloat("speed", input.magnitude);
         }
 
