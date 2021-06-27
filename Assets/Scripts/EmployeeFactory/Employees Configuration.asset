@@ -15,4 +15,3 @@ MonoBehaviour:
   employees:
   - {fileID: -2082168686099124354, guid: 5beaa516cf1313542844f72a1ce3ba05, type: 3}
   - {fileID: -1240054571376196350, guid: 1c57e47df2acbff40a239e2ce1bb6883, type: 3}
-  - {fileID: 2593603599748282092, guid: cd3171d562d5fc143bdb534c8ccea5a3, type: 3}

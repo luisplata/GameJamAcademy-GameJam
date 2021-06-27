@@ -77,6 +77,20 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         PlayShortSoundOnce(mouseClick[random].name);
     }
 
+    public void PlayFootStepsSounds()
+    {
+        List<AudioClip> footStep = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("FS_Retro_Wood"))
+            {
+                footStep.Add(clip);
+            }
+        }
+        var random = Random.Range(0, footStep.Count);
+        PlayShortSoundOnce(footStep[random].name);
+    }
+
     public void PlayAmbientSound()
     {
         throw new System.NotImplementedException();
