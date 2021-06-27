@@ -849,6 +849,7 @@ GameObject:
   - component: {fileID: 5329596186974007118}
   - component: {fileID: 2115912603}
   - component: {fileID: 2115912595}
+  - component: {fileID: 7758700793946098467}
   m_Layer: 0
   m_Name: Designer
   m_TagString: Untagged
@@ -972,7 +973,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6503391054162836658}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.32010365, y: 1.4136552, z: 0.214921}
@@ -1090,6 +1091,20 @@ MonoBehaviour:
   m_Output: {fileID: 8640835416984563264, guid: 9ab1dfd74a8dd42dd91c6f4664e5404c, type: 2}
   m_Volume: 0.5
   m_VolumeVariation: 0.2
+--- !u!136 &7758700793946098467
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503391054162836658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.15047938
+  m_Height: 1.4563893
+  m_Direction: 1
+  m_Center: {x: 0.0058743358, y: 0.6698025, z: 0.020560026}
 --- !u!1 &6939109937738896552
 GameObject:
   m_ObjectHideFlags: 0
