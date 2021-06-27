@@ -26,7 +26,6 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         m_AudioSource.PlayOneShot(FindAudioClipByName(audioClip));
     }
 
-
     private AudioClip FindAudioClipByName(string audioClipName)
     {
 
@@ -35,6 +34,7 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         return foundSound;  
     }
 
+    #region 2DSounds
     public void ShotScreamBoss()
     {
         List<AudioClip> boss = new List<AudioClip>();
@@ -48,7 +48,19 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         var random = Random.Range(0, boss.Count);
         PlayShortSoundOnce(boss[random].name);
     }
-
+    public void PlayPossitiveQuote()
+    {
+        List<AudioClip> quote = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_NPC_AllySupport"))
+            {
+                quote.Add(clip);
+            }
+        }
+        var random = Random.Range(0, quote.Count);
+        PlayShortSoundOnce(quote[random].name);
+    }
     public void PlayHoverMouseSounds()
     {
         List<AudioClip> mouseHover = new List<AudioClip>();
@@ -62,7 +74,6 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         var random = Random.Range(0, mouseHover.Count);
         PlayShortSoundOnce(mouseHover[random].name);
     }
-
     public void PlayMouseClickSounds()
     {
         List<AudioClip> mouseClick = new List<AudioClip>();
@@ -76,22 +87,37 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         var random = Random.Range(0, mouseClick.Count);
         PlayShortSoundOnce(mouseClick[random].name);
     }
+    #endregion
 
-    public void PlayFootStepsSounds()
+    #region 3DSounds
+    public AudioClip SelectFootStepsSounds()
     {
-        List<AudioClip> footStep = new List<AudioClip>();
+        List<AudioClip> footStepSound = new List<AudioClip>();
         foreach (var clip in m_SoundsToPlay)
         {
-            if (clip.name.Contains("FS_Retro_Wood"))
+            if (clip.name.Contains("GJA_ITEMS_Arcade"))
             {
-                footStep.Add(clip);
+                footStepSound.Add(clip);
             }
         }
-        var random = Random.Range(0, footStep.Count);
-        PlayShortSoundOnce(footStep[random].name);
+        var random = Random.Range(0, footStepSound.Count);
+
+        return footStepSound[random];
     }
+    public AudioClip SelectGruntSounds()
+    {
+        List<AudioClip> grunt = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_NPC_Grunts[001]"))
+            {
+                grunt.Add(clip);
+            }
+        }
+        var random = Random.Range(0, grunt.Count);
 
-
+        return grunt[random];
+    }
     public AudioClip SelectArcadeSound()
     {
         List<AudioClip> arcadeSound = new List<AudioClip>();
@@ -106,8 +132,34 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
 
         return arcadeSound[random];
     }
-    public void PlayAmbientSound()
+    public AudioClip SelectPaperSound()
     {
-        throw new System.NotImplementedException();
+        List<AudioClip> paper = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_ITEMS_Arcade"))
+            {
+                paper.Add(clip);
+            }
+        }
+        var random = Random.Range(0, paper.Count);
+
+        return paper[random];
     }
+    public AudioClip SelectProjectileSound()
+    {
+        List<AudioClip> projectileSounds = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("Flame"))
+            {
+                projectileSounds.Add(clip);
+            }
+        }
+        var random = Random.Range(0, projectileSounds.Count);
+
+        return projectileSounds[random];
+    }
+    #endregion
+
 }
