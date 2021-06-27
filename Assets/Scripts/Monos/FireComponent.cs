@@ -34,6 +34,7 @@ public class FireComponent : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Interac") || other.gameObject.CompareTag("Opponent"))
         {
+            ServiceLocator.Instance.GetService<ISoundToCrash>().SoundToCrash();
             Destroy(other.gameObject);
         }
 

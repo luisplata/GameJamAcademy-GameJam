@@ -68,12 +68,12 @@ public class Employee : MonoBehaviour, IEmployee
 
         private void FixedUpdate()
         {
-                if (_actionToPlayer.CanInteractive() && _skill.HasPushSkill())
+                if (_actionToPlayer.CanInteractive() && _skill.HasPushSkill() && isThePlayer)
                 {
                         _actionToPlayer.InteractiveToTheObject();
                         return;
                 }
-                if (_skill.HasPushSkill())
+                if (_skill.HasPushSkill() && isThePlayer)
                 {
                         _skill.ActionSkill();
                 }
@@ -169,6 +169,8 @@ public class Employee : MonoBehaviour, IEmployee
 
         private GameObject figure;
         private float force;
+        private bool isThePlayer;
+
         public void CreateObject(GameObject figure, float force)
         {
                 this.figure = figure;
@@ -251,5 +253,10 @@ public class Employee : MonoBehaviour, IEmployee
         public Transform GetPointForTheCamera()
         {
                 return pointForTheCamera;
+        }
+
+        public void IsThePlayer()
+        {
+                isThePlayer = true;
         }
 }

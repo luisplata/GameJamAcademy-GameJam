@@ -21,6 +21,7 @@ namespace Audio
             ServiceLocator.Instance.RegisterService<ITriggerSoundEffect>(m_PlaySoundsInUnity); //Servicio que voy a consumir.
             ServiceLocator.Instance.RegisterService<ISoundBossScream>(m_PlaySoundsInUnity);
             ServiceLocator.Instance.RegisterService<IUiSound>(m_PlaySoundsInUnity);
+            ServiceLocator.Instance.RegisterService<ISoundToCrash>(m_PlaySoundsInUnity);
             ServiceLocator.Instance.RegisterService<IStatusGame>(statis);
 
             DontDestroyOnLoad(gameObject);

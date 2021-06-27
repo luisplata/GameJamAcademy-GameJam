@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossScream, IUiSound
+public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossScream, IUiSound,ISoundToCrash
 {
     [SerializeField] AudioSource m_AudioSource;
 
@@ -176,4 +176,18 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
     }
     #endregion
 
+    public void SoundToCrash()
+    {
+        List<AudioClip> bossScream = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_NPC_Grunts[001]"))
+            {
+                bossScream.Add(clip);
+            }
+        }
+        var random = Random.Range(0, bossScream.Count);
+
+        PlayShortSoundOnce(bossScream[random].name);
+    }
 }
