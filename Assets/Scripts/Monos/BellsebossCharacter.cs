@@ -31,6 +31,8 @@ public class BellsebossCharacter : MonoBehaviour, IBellsebossCharacter
     {
         var instantiate = Instantiate(fireObject);
         instantiate.transform.position = pointToSpawn.position;
-        instantiate.AddComponent<FireComponent>();
+        var fireComponent = instantiate.AddComponent<FireComponent>();
+        var findWithTag = GameObject.FindWithTag("Player");
+        fireComponent.Configure(findWithTag.transform.position);
     }
 }
