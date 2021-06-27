@@ -226,7 +226,7 @@ GameObject:
   m_Layer: 0
   m_Name: pointToEnemys
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -407,6 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5972068270090834984}
+  - component: {fileID: 1050103618814328487}
   m_Layer: 0
   m_Name: Circunference
   m_TagString: Untagged
@@ -429,6 +430,22 @@ Transform:
   m_Father: {fileID: 5839901089455171080}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1050103618814328487
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136925113767115328}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4167084914580024512
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +933,7 @@ MonoBehaviour:
   pointToObject: {fileID: 4136925113767115328}
   targetToOpponents: {fileID: 3172708315137196338}
   multiply: 30
+  rb: {fileID: 0}
 --- !u!114 &-2200028481490015216
 MonoBehaviour:
   m_ObjectHideFlags: 0
