@@ -7,13 +7,6 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
 {
     [SerializeField] AudioSource m_AudioSource;
 
-    [SerializeField] AudioSource m_AudioSourceAmbientDay;
-    [SerializeField] AudioSource m_AudioSourceAmbientNight;
-
-    
-    [SerializeField] AudioMixerSnapshot M_SnapShotDay;
-    [SerializeField] AudioMixerSnapshot M_SnapShotNight;
-
     [SerializeField] List<AudioClip> m_SoundsToPlay;
 
     Dictionary<string, AudioClip> m_SoundDictionary;
@@ -42,14 +35,6 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         return foundSound;  
     }
 
-    public void PlayAmbientSound()
-    {
-        m_AudioSourceAmbientDay.clip = FindAudioClipByName("AmbienceBase");
-        m_AudioSourceAmbientDay.loop = true;
-        M_SnapShotDay.TransitionTo(1f);
-        m_AudioSourceAmbientDay.Play();
-    }
-
     public void ShotScreamBoss()
     {
         List<AudioClip> boss = new List<AudioClip>();
@@ -62,5 +47,38 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         }
         var random = Random.Range(0, boss.Count);
         PlayShortSoundOnce(boss[random].name);
+    }
+
+    public void PlayHoverMouseSounds()
+    {
+        List<AudioClip> mouseHover = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_Gui_MouseHover"))
+            {
+                mouseHover.Add(clip);
+            }
+        }
+        var random = Random.Range(0, mouseHover.Count);
+        PlayShortSoundOnce(mouseHover[random].name);
+    }
+
+    public void PlayMouseClickSounds()
+    {
+        List<AudioClip> mouseClick = new List<AudioClip>();
+        foreach (var clip in m_SoundsToPlay)
+        {
+            if (clip.name.Contains("GJA_GUI_MouseClick"))
+            {
+                mouseClick.Add(clip);
+            }
+        }
+        var random = Random.Range(0, mouseClick.Count);
+        PlayShortSoundOnce(mouseClick[random].name);
+    }
+
+    public void PlayAmbientSound()
+    {
+        throw new System.NotImplementedException();
     }
 }
