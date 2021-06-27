@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneManager : MonoBehaviour
 {
     [SerializeField] private int sceneIndex;
-    [SerializeField] private int characterIndex;
 
-    public void LoadScene(string character)
+    public void LoadScene(int character)
     {
-        PlayerPrefs.SetString("character",character);
+        PlayerPrefs.SetInt("character",character);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneIndex);
     }
     
@@ -30,9 +29,4 @@ public class SceneManager : MonoBehaviour
         ServiceLocator.Instance.GetService<ISoundBossScream>().ShotScreamBoss();
     }
 
-    public void SelectYourCharacter()
-    {
-        PlayerPrefs.SetInt("Character", characterIndex);
-        //Debug.Log("Character is: " + PlayerPrefs.GetInt("Character") + characterIndex);
-    }
 }
