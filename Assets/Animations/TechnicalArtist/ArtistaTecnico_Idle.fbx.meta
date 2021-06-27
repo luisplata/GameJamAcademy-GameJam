@@ -6,7 +6,27 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cloth_1
+    second: {fileID: 2100000, guid: 5184445928dd17d48a84bf4e62dfddff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cloth_2
+    second: {fileID: 2100000, guid: 28eeac45a63a5c041941b6caf2a938e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coffee_cup
+    second: {fileID: 2100000, guid: 3837658ed8d48d34cae773105e5e1a57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouth
+    second: {fileID: 2100000, guid: 9a92767e1034ad049bb38f27df56240b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
