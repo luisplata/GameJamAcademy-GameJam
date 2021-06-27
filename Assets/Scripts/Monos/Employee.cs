@@ -64,6 +64,11 @@ public class Employee : MonoBehaviour, IEmployee
 
         private void FixedUpdate()
         {
+                if (_actionToPlayer.CanInteractive() && _skill.HasPushSkill())
+                {
+                        _actionToPlayer.InteractiveToTheObject();
+                        return;
+                }
                 if (_skill.HasPushSkill())
                 {
                         _skill.ActionSkill();
@@ -74,15 +79,10 @@ public class Employee : MonoBehaviour, IEmployee
 
         private void Update()
         {
-                if (_actionToPlayer.CanInteractive() && _skill.HasPushSkill())
-                {
-                        _actionToPlayer.InteractiveToTheObject();
-                        return;
-                }
-                if (Input.GetKeyDown(KeyCode.Space))
+                /*if (Input.GetKeyDown(KeyCode.Space))
                 {
                         LaunchTheBook();
-                }
+                }*/
                 _movement.Move();
                 transform.position = rb.gameObject.transform.position;
         }
@@ -90,8 +90,8 @@ public class Employee : MonoBehaviour, IEmployee
         public void ConvertAli(GameObject ali)
         {
                 var aliance = ali.GetComponent<Employee>();
-                aliance.SetComponents(new AliMovementHelp(_movement.GetSpeed()), aliance.GetSkill());
-                Debug.Log("Convert to Ali");
+                var findWithTag = GameObject.FindWithTag("Opponent");
+                aliance.SetComponents(new AliMovementHelp(_movement.GetSpeed(),findWithTag), aliance.GetSkill());
         }
 
         public List<Employee> ListOfOpponents => _listOfOpponents;
@@ -99,6 +99,13 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 return id.Value;
         }
+
+        private GameObject targetForFind;
+        public GameObject GetTargetForFind()
+        {
+                return targetForFind;
+        }
+
         private void Rotating (float horizontal, float vertical)
         {
                 Vector3 targetDirection = new Vector3(horizontal, 0f, vertical);
