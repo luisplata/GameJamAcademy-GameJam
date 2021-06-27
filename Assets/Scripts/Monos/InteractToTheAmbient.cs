@@ -13,7 +13,7 @@ public class InteractToTheAmbient : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Interac") || other.gameObject.CompareTag("Goal"))
+        if (other.gameObject.CompareTag("Interac") || other.gameObject.CompareTag("Goal") || other.gameObject.CompareTag("Ali"))
         {
             _employee.CanInteractive(other.gameObject);
         }
@@ -21,7 +21,7 @@ public class InteractToTheAmbient : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Interac") || other.gameObject.CompareTag("Goal"))
+        if (other.gameObject.CompareTag("Interac") || other.gameObject.CompareTag("Goal") || other.gameObject.CompareTag("Ali"))
         {
             _employee.CantInteractive();
         }

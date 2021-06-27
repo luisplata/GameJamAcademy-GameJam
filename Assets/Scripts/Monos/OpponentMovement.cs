@@ -24,9 +24,8 @@ public class OpponentMovement : Movement
             {
                 diff += (_employee.GetPosition() - opponent.gameObject.transform.position);
             }
-            speed /= speed;
             diff.y = 0;
         }
-        _employee.Move(diff.normalized * speed);
+        _employee.Move(diff * speed);
     }
 }

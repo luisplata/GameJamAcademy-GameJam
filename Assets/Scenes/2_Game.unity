@@ -1906,18 +1906,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
-      propertyPath: timeMaxToRespawnFire
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
-      propertyPath: timeMinToRespawnFire
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 6294101893112326643, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: m_Name
       value: Bellseboss_Idle
@@ -3204,7 +3192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7211822525148487432, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.25
+      value: 1.63
       objectReference: {fileID: 0}
     - target: {fileID: 7211822525148487432, guid: 5b9d27386ee4b524188af64943bd4051, type: 3}
       propertyPath: m_LocalPosition.y

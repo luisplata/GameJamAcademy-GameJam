@@ -12,6 +12,6 @@ public class AliMovementHelp : Movement
     public override void Move()
     {
         var diff = _target.transform.position - _employee.GetPosition();
-        _employee.Move(diff.normalized);
+        _employee.Move(diff * speed);
     }
 }

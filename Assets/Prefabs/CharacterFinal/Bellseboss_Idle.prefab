@@ -587,9 +587,10 @@ GameObject:
   - component: {fileID: 6634634574534193993}
   - component: {fileID: 788930563416222003}
   - component: {fileID: 679340356032706472}
+  - component: {fileID: 3167995263917029495}
   m_Layer: 0
   m_Name: Bellseboss_Idle
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,16 +638,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6294101893112326643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca631dbe380de3245ab3fdff0e2c6350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeMaxToRespawnFire: 2
-  timeMinToRespawnFire: 5
+  timeMaxToRespawnFire: 15
+  timeMinToRespawnFire: 30
   fireObject: {fileID: 4263916156845922173, guid: a7eac71ccae4b72498b7e6001c2c8784, type: 3}
   pointToSpawn: {fileID: 9093475108072959171}
   ani: {fileID: 788930563416222003}
+--- !u!65 &3167995263917029495
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294101893112326643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28817463, y: 1.4169261, z: 0.29834366}
+  m_Center: {x: -0.010169029, y: 0.6965717, z: 0.025422573}
 --- !u!1 &6451248105320257252
 GameObject:
   m_ObjectHideFlags: 0

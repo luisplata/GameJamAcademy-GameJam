@@ -56,7 +56,11 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 return _skill;
         }
-        
+        public void StartToSkill()
+        {
+                Destroy(gameObject,10);
+        }
+
         public void SetSkill(ISkill s)
         {
                 _skill = s;
@@ -91,7 +95,8 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 var aliance = ali.GetComponent<Employee>();
                 var findWithTag = GameObject.FindWithTag("Opponent");
-                aliance.SetComponents(new AliMovementHelp(_movement.GetSpeed(),findWithTag), aliance.GetSkill());
+                var skillForTheAli = new SkillForTheAli(aliance.GetSkill());
+                aliance.SetComponents(new AliMovementHelp(_movement.GetSpeed(),findWithTag), skillForTheAli);
         }
 
         public List<Employee> ListOfOpponents => _listOfOpponents;
@@ -232,7 +237,12 @@ public class Employee : MonoBehaviour, IEmployee
 
         public void DeliveryToBook()
         {
-                Debug.Log("Terminaste");
+                anim.SetTrigger("give");
+        }
+
+        public void FinishAnimationToFinishGame()
+        {
+                Debug.Log("terminaste");
         }
 
         public void LaunchTheBook()

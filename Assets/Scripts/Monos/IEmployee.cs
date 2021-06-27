@@ -22,4 +22,5 @@ public interface IEmployee
     string GetId();
     GameObject GetTargetForFind();
     ISkill GetSkill();
+    void StartToSkill();
 }
