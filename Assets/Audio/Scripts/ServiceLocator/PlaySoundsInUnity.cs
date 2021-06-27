@@ -95,7 +95,7 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         List<AudioClip> footStepSound = new List<AudioClip>();
         foreach (var clip in m_SoundsToPlay)
         {
-            if (clip.name.Contains("GJA_ITEMS_Arcade"))
+            if (clip.name.Contains("FS_Retro_Wood"))
             {
                 footStepSound.Add(clip);
             }

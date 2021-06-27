@@ -1000,6 +1000,7 @@ GameObject:
   - component: {fileID: 4873139929607172766}
   - component: {fileID: 7198206614490889608}
   - component: {fileID: -6357363384368633771}
+  - component: {fileID: 1660725719}
   m_Layer: 0
   m_Name: TechnicalArtist
   m_TagString: Untagged
@@ -1142,6 +1143,23 @@ MonoBehaviour:
   targetToOpponents: {fileID: 4445299697401675746}
   multiply: 5
   rb: {fileID: 8545638530660508547}
+--- !u!114 &1660725719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492279070200917157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2b0b0bb45ba47ff86affb79bd73219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlaySoundsInUnity: {fileID: 0}
+  m_AudioSource: {fileID: 0}
+  m_Output: {fileID: 8640835416984563264, guid: 9ab1dfd74a8dd42dd91c6f4664e5404c, type: 2}
+  m_Volume: 0.5
+  m_VolumeVariation: 0
 --- !u!1 &8511464231091998718
 GameObject:
   m_ObjectHideFlags: 0
