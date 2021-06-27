@@ -62,7 +62,7 @@ public class Installer : MonoBehaviour
         _player.name = "Player";
         Debug.Log($"objetivePlayer.transform.position {objetivePlayer.transform.position}");
         _player.SetObjetive(objetivePlayer.transform.position);
-        _player.transform.position = Vector3.up * 5;
+        _player.transform.position = transform.position;
     }
 
     public IEmployee GetPlayer()

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public enum EmployeeId
@@ -20,6 +19,7 @@ public class Employee : MonoBehaviour, IEmployee
         [SerializeField] private Rigidbody rb;
         [SerializeField] private Animator anim;
         [SerializeField] private Transform pointToSpawnSkill;
+        [SerializeField] private Transform pointForTheCamera;
         private float timeToColdDownToUseSkill;
         private float detaTimeLocal;
         private IMovement _movement;
@@ -220,5 +220,10 @@ public class Employee : MonoBehaviour, IEmployee
                 var bookInstantiate = Instantiate(book);
                 bookInstantiate.transform.position = positionToSpawnBook.position;
                 bookInstantiate.GetComponent<Rigidbody>().AddForce(Vector3.up * forceToLaunch);
+        }
+
+        public Transform GetPointForTheCamera()
+        {
+                return pointForTheCamera;
         }
 }
