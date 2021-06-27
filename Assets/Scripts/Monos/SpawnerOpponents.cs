@@ -7,6 +7,7 @@ public class SpawnerOpponents : MonoBehaviour
 {
     [SerializeField] private List<float> timeToSpawnInSeconds, timeToSpawnAliInSeconds;
     [SerializeField] private List<GameObject> pointsToSpawn;
+    [SerializeField] private Transform pointsToSpawnAli;
     [SerializeField] private EmployeesConfiguration configuration;
     [SerializeField] private float speedPlayer;
     [SerializeField] private GameObject skillInstantiate, pointToSpawn;
@@ -72,9 +73,19 @@ public class SpawnerOpponents : MonoBehaviour
 
     private void CreateOpponent()
     {
+        Skill skillEpecific = null;
+        if (_installer.GetPlayer().GetId() == _installer.GetArtistId().Value)
+        {
+            skillEpecific = new SkillEpecificTechnicalArtist(Instantiate(_installer.GetTechnicalArtisConfig()));
+            model = _installer.GetTechnicalArtistId();
+        }else if (_installer.GetPlayer().GetId() == _installer.GetTechnicalArtistId().Value)
+        {
+            skillEpecific = new SkillForGraphic(Instantiate(_installer.GetGraphicConfiguration()), _installer.GetForce());
+            model = _installer.GetArtistId();
+        }
         var employeeBuilder = _factory.Create(model);
         var mov = new OpponentMovement(speedPlayer, _installer.GetPlayer(), (maxDistance + indexToCount) * 40);
-        var opponent = employeeBuilder.WithMovement(mov).WithSkill(new SkillEspecific(new GameObject())).Build();
+        var opponent = employeeBuilder.WithMovement(mov).WithSkill(skillEpecific).Build();
         //changed color to the opponents
         //changed to Red
         opponent.transform.position = pointToSpawn.transform.position;

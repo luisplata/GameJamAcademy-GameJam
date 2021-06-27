@@ -19,4 +19,5 @@ public interface IEmployee
     void ConvertAli(GameObject gameObject);
     void LaunchTheBook();
     List<Employee> ListOfOpponents { get; }
+    string GetId();
 }

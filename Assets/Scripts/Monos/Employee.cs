@@ -95,6 +95,10 @@ public class Employee : MonoBehaviour, IEmployee
         }
 
         public List<Employee> ListOfOpponents => _listOfOpponents;
+        public string GetId()
+        {
+                return id.Value;
+        }
 
         public void Move(Vector3 input)
         {

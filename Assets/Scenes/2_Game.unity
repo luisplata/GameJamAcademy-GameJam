@@ -30822,6 +30822,14 @@ PrefabInstance:
       propertyPath: model
       value: 
       objectReference: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
+    - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
+      propertyPath: timeToSpawnInSeconds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
+      propertyPath: timeToSpawnInSeconds.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 408921672059039934, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: m_Name
       value: SpawnerOpponents

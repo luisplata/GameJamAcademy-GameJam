@@ -69,4 +69,29 @@ public class Installer : MonoBehaviour
     {
         return _player;
     }
+
+    public EmployeeScriptable GetArtistId()
+    {
+        return artist;
+    }
+
+    public EmployeeScriptable GetTechnicalArtistId()
+    {
+        return technicalArtist;
+    }
+
+    public GeometricsFigureForTheGraphicConfiguration GetGraphicConfiguration()
+    {
+        return graphicConfiguration;
+    }
+
+    public float GetForce()
+    {
+        return force;
+    }
+
+    public GeometricsFigureForTheGraphicConfiguration GetTechnicalArtisConfig()
+    {
+        return tecnicalArtis;
+    }
 }

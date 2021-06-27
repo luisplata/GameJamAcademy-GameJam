@@ -52,7 +52,7 @@ MonoBehaviour:
   virtualCamera: {fileID: 0}
   objetivePlayer: {fileID: 0}
   spawner: {fileID: 0}
-  graphicConfiguration: {fileID: 0}
-  tecnicalArtis: {fileID: 0}
+  graphicConfiguration: {fileID: 11400000, guid: 7b094e8eab0cc704cbc50d73d368bba7, type: 2}
+  tecnicalArtis: {fileID: 11400000, guid: 36a7876c2fd5a5443ad049b85f4ad38b, type: 2}
   prefabToBellseboss: {fileID: 0}
   force: 0
