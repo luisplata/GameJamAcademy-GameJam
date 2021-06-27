@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 6430931151437882633}
   - component: {fileID: 6430931151437913257}
   - component: {fileID: 6430931151462926731}
-  - component: {fileID: -5520035939023564944}
-  - component: {fileID: 8909624047865497016}
+  - component: {fileID: -3554126406520283498}
   m_Layer: 0
   m_Name: WFX_GazFireBig (No Smoke)
   m_TagString: Untagged
@@ -4680,30 +4679,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
---- !u!114 &-5520035939023564944
-MonoBehaviour:
+--- !u!65 &-3554126406520283498
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6430931151453256809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ee8df8182144444b468e05e454a5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8909624047865497016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6430931151453256809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a6c12b0b6ab4e2e952c304028a1f238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Size: {x: 1.3126049, y: 1, z: 2.0503466}
+  m_Center: {x: -0.006251335, y: 1.2485655e-15, z: 1.0878597}
 --- !u!1 &6430931151453256811
 GameObject:
   m_ObjectHideFlags: 0

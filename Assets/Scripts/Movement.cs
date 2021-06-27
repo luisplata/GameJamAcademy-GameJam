@@ -20,4 +20,9 @@ public abstract class Movement : IMovement
     {
         return speed;
     }
+
+    public bool IsEnemy()
+    {
+        return typeof(OpponentMovement) == GetType();
+    }
 }

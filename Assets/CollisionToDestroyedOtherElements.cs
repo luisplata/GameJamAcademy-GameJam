@@ -3,13 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColisionToDestroidOtherElements : MonoBehaviour
+public class CollisionToDestroyedOtherElements : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<InteractiveToDestroyed>(out var output))
         {
             output.StartToDestroyed();
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+
     }
 }

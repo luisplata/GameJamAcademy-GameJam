@@ -20,11 +20,15 @@ public class Employee : MonoBehaviour, IEmployee
         [SerializeField] private Rigidbody rb;
         [SerializeField] private Animator anim;
         [SerializeField] private Transform pointToSpawnSkill;
+        private float timeToColdDownToUseSkill;
+        private float detaTimeLocal;
         private IMovement _movement;
         private ISkill _skill;
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
         private IActionToPlayer _actionToPlayer;
         private Vector3 _objective;
+
+        public bool IsEnemy { get; private set; }
 
         private void Awake()
         {
@@ -34,6 +38,7 @@ public class Employee : MonoBehaviour, IEmployee
                 interactToTheAmbient.Configure(this);
                 _actionToPlayer = new ActionToPlayer(this);
                 employeeMono.Config(this);
+                timeToColdDownToUseSkill = 10;
         }
 
         public string Id => id.Value;
@@ -44,6 +49,7 @@ public class Employee : MonoBehaviour, IEmployee
                 _skill = sk;
                 _skill.Configure(this);
                 _movement.Configure(this);
+                IsEnemy = _movement.IsEnemy();
         }
 
         public ISkill GetSkill()
@@ -109,7 +115,11 @@ public class Employee : MonoBehaviour, IEmployee
 
         public bool GetInputSkill()
         {
-                return Input.GetKeyDown(KeyCode.Space);
+                if (!IsEnemy) return Input.GetKeyDown(KeyCode.Space);
+                detaTimeLocal += Time.deltaTime;
+                if (!(detaTimeLocal >= timeToColdDownToUseSkill)) return false;
+                detaTimeLocal = 0;
+                return true;
         }
 
         public Vector3 GetPosition()
@@ -146,6 +156,14 @@ public class Employee : MonoBehaviour, IEmployee
                 var instantiate = Instantiate(figure);
                 instantiate.transform.position = pointToSpawnSkill.position;
                 instantiate.GetComponent<Rigidbody>().AddForce(Vector3.forward * force,ForceMode.Impulse);
+                if (IsEnemy)
+                {
+                        instantiate.gameObject.AddComponent<InteractiveToDestroyed>();
+                }
+                else
+                {
+                        instantiate.AddComponent<CollisionToDestroyedOtherElements>();
+                }
         }
 
         public void CreateObject(GameObject figuree)
@@ -158,6 +176,14 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 var instantiate = Instantiate(figure);
                 instantiate.transform.position = pointToSpawnSkill.transform.position;
+                if (IsEnemy)
+                {
+                        instantiate.AddComponent<InteractiveToDestroyed>();
+                }
+                else
+                {
+                        instantiate.AddComponent<CollisionToDestroyedOtherElements>();
+                }
         }
 
         public void CanInteractive(GameObject otherGameObject)
