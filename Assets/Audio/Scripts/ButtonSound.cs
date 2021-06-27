@@ -15,7 +15,7 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         //Get A ref for the audio source...
         thisButton = GetComponent<Button>();
-        if(playSoundsInUnity == null!)
+        if(playSoundsInUnity == null)
         {
             playSoundsInUnity = GetComponent<PlaySoundsInUnity>();
         }
