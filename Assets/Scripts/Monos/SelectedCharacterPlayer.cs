@@ -11,7 +11,6 @@ public class SelectedCharacterPlayer : MonoBehaviour
         if (isFinishAnimation)
         {
             isFinishAnimation = false;
-            print("hola");
             ani.SetTrigger("dance");
         }
     }
