@@ -2,12 +2,16 @@
 
 public class AliMovementHelp : Movement
 {
-    public AliMovementHelp(float speed) : base(speed)
+    private readonly GameObject _target;
+
+    public AliMovementHelp(float speed, GameObject target) : base(speed)
     {
+        _target = target;
     }
 
     public override void Move()
     {
-        _employee.Move(Vector3.right);
+        var diff = _target.transform.position - _employee.GetPosition();
+        _employee.Move(diff.normalized);
     }
 }

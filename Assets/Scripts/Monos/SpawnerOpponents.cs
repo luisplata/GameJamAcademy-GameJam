@@ -8,7 +8,7 @@ public class SpawnerOpponents : MonoBehaviour
     [SerializeField] private Transform pointsToSpawnAli;
     [SerializeField] private EmployeesConfiguration configuration;
     [SerializeField] private float speedPlayer;
-    [SerializeField] private GameObject skillInstantiate, pointToSpawn;
+    [SerializeField] private GameObject skillInstantiate;
     [SerializeField] private EmployeeScriptable model;
     [SerializeField] private float maxDistance;
 
@@ -60,10 +60,22 @@ public class SpawnerOpponents : MonoBehaviour
 
     private void CreateAli()
     {
+        Skill skillEpecific = null;
+        if (_installer.GetPlayer().GetId() == _installer.GetArtistId().Value)
+        {
+            skillEpecific = new SkillEpecificTechnicalArtist(Instantiate(_installer.GetTechnicalArtisConfig()));
+            model = _installer.GetTechnicalArtistId();
+        }else if (_installer.GetPlayer().GetId() == _installer.GetTechnicalArtistId().Value)
+        {
+            skillEpecific = new SkillForGraphic(Instantiate(_installer.GetGraphicConfiguration()), _installer.GetForce());
+            model = _installer.GetArtistId();
+        }
         var employeeBuilder = _factory.Create(model);
         var mov = new AliMovementidle(speedPlayer);
-        var opponent = employeeBuilder.WithMovement(mov).WithSkill(new SkillEspecific(new GameObject())).Build();
-        opponent.transform.position = pointToSpawn.transform.position;
+        var opponent = employeeBuilder.WithMovement(mov).WithSkill(skillEpecific).Build();
+        opponent.transform.position = pointsToSpawnAli.transform.position;
+        var alianceInteractiveToWord = opponent.gameObject.AddComponent<AlianceInteractiveToWord>();
+        alianceInteractiveToWord.Configure(opponent);
         //changed color to the alis
         //changed to blue
         opponent.tag = "Ali";

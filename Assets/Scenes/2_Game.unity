@@ -1908,7 +1908,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 679340356032706472, guid: 8f100834410c7084686474c8369dbb31, type: 3}
       propertyPath: timeMaxToRespawnFire
@@ -31159,7 +31159,7 @@ PrefabInstance:
       objectReference: {fileID: 137003078}
     - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: timeToSpawnInSeconds.Array.size
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: timeToSpawnAliInSeconds.Array.size
@@ -31167,7 +31167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: timeToSpawnInSeconds.Array.data[0]
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: timeToSpawnInSeconds.Array.data[1]
@@ -31203,7 +31203,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: timeToSpawnAliInSeconds.Array.data[0]
-      value: 15
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
+      propertyPath: timeToSpawnAliInSeconds.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
+      propertyPath: timeToSpawnAliInSeconds.Array.data[2]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
+      propertyPath: timeToSpawnAliInSeconds.Array.data[3]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 408921672059039928, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
+      propertyPath: timeToSpawnAliInSeconds.Array.data[4]
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 408921672059039934, guid: bc3b0cd7ec20aee418314f2f9b48d90f, type: 3}
       propertyPath: m_Name

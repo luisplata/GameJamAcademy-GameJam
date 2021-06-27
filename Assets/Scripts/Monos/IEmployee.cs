@@ -20,4 +20,6 @@ public interface IEmployee
     void LaunchTheBook();
     List<Employee> ListOfOpponents { get; }
     string GetId();
+    GameObject GetTargetForFind();
+    ISkill GetSkill();
 }
