@@ -67,6 +67,8 @@ public class Employee : MonoBehaviour, IEmployee
         public void SetPointToGo(Vector3 tranformToGoOpponent)
         {
                 _navMeshAgent.destination = tranformToGoOpponent;
+                var velocityNav = _navMeshAgent.velocity;
+                Rotating(velocityNav.x, velocityNav.y);
         }
 
         public void SetSkill(ISkill s)
