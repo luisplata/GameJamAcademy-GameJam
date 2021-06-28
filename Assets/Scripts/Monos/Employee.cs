@@ -31,6 +31,11 @@ public class Employee : MonoBehaviour, IEmployee
 
         public bool IsEnemy { get; private set; }
 
+        private void Start()
+        {
+                _navMeshAgent = GetComponent<NavMeshAgent>();
+        }
+
         private void Awake()
         {
                 _circumferenceOfEnemy = GetComponent<ICircumferenceOfEnemy>();
@@ -64,7 +69,7 @@ public class Employee : MonoBehaviour, IEmployee
 
         public void SetPointToGo(Vector3 tranformToGoOpponent)
         {
-                GetComponent<NavMeshAgent>().destination = tranformToGoOpponent;
+                _navMeshAgent.destination = tranformToGoOpponent;
         }
 
         public void SetSkill(ISkill s)
@@ -197,6 +202,7 @@ public class Employee : MonoBehaviour, IEmployee
         private GameObject figure;
         private float force;
         private bool isThePlayer;
+        private NavMeshAgent _navMeshAgent;
 
         public void CreateObject(GameObject figure, float force)
         {
