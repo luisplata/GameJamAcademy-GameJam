@@ -31,6 +31,9 @@ public class Installer : MonoBehaviour
         ConfigureCamera();
 
         spawner.Configure(this);
+        totalDistance = CalculateDistance();
+        PartDistance();
+        TotalLayersInMusic();
     }
 
     private void ConfigureCamera()

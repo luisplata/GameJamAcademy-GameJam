@@ -28,6 +28,11 @@ public class Employee : MonoBehaviour, IEmployee
         private ICircumferenceOfEnemy _circumferenceOfEnemy;
         private IActionToPlayer _actionToPlayer;
         private Vector3 _objective;
+        
+        
+        private float totalDistance, variantDistance;
+        private int parts = 5;
+        private float partToDistance;
 
         public bool IsEnemy { get; private set; }
 
@@ -42,6 +47,29 @@ public class Employee : MonoBehaviour, IEmployee
                 employeeMono.Config(this);
                 timeToColdDownToUseSkill = 10;
                 _navMeshAgent = GetComponent<NavMeshAgent>();
+        }
+
+        public void PartDistance()
+        {
+                partToDistance = totalDistance / parts;
+        }
+
+        public void TotalLayersInMusic()
+        {
+                var distance = totalDistance / partToDistance;
+                var calculateDistance = (int) (CalculateDistance()) / parts;
+                Debug.Log($"distance {distance} variante {calculateDistance}");
+                var totalLayers = distance - calculateDistance;
+                if (totalLayers <= 0)
+                {
+                        totalLayers = 1;
+                }
+                Debug.Log($"total layers in game {totalLayers}");
+        }
+
+        private float CalculateDistance()
+        {
+                return (_objective - transform.position).magnitude;
         }
 
         public string Id => id.Value;
