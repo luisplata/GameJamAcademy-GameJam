@@ -60,7 +60,7 @@ crashlytics-build.properties
 
 #Adding setting proyect for the publish
 /ProjectSettings/ProjectSettings.asset
-/UserSettings/EditorUserSettings.assett
+/UserSettings/EditorUserSettings.asset
 /ProjectSettings/ProjectVersion.txt
 
 .idea/*
