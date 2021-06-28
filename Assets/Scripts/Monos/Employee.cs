@@ -268,10 +268,12 @@ public class Employee : MonoBehaviour, IEmployee
         public void DeliveryToBook()
         {
                 anim.SetTrigger("give");
+                ServiceLocator.Instance.GetService<ITriggerSoundEffect>().PlayShortSoundOnce("Music_Win_bpm162_4-4");
         }
 
         public void FinishAnimationToFinishGame()
         {
+                ServiceLocator.Instance.GetService<ITriggerSoundEffect>().StopSFX();
                 UnityEngine.SceneManagement.SceneManager.LoadScene(3);
         }
 

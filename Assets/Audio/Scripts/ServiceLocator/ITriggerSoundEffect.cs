@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ITriggerSoundEffect
 {
     void PlayShortSoundOnce(string audioClip);
+    void StopSFX();
 }

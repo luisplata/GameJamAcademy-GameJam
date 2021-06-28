@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossScream, IUiSound,ISoundToCrash, IMusic
 {
@@ -24,6 +22,11 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
     public void PlayShortSoundOnce(string audioClip)
     {
         m_AudioSource.PlayOneShot(FindAudioClipByName(audioClip));
+    }
+
+    public void StopSFX()
+    {
+        m_AudioSource.Stop();
     }
 
     private AudioClip FindAudioClipByName(string audioClipName)
