@@ -36,7 +36,7 @@ public class ActionToPlayer : IActionToPlayer
             _employee.DeliveryToBook();
         }
 
-        if (_gameObject.CompareTag("Interac") || _gameObject.CompareTag("Ali"))
+        if (_gameObject.CompareTag("Ali"))
         {
             _employee.ConvertAli(_gameObject);
         }

@@ -16,9 +16,10 @@ public class Installer : MonoBehaviour
     [SerializeField] private GeometricsFigureForTheGraphicConfiguration graphicConfiguration, tecnicalArtis;
     [SerializeField] private GameObject prefabToBellseboss;
     [SerializeField] private float force;
-
+    private Transform pointFares;
     private Employee _player;
     private GameObject _bellsebossInstantiate;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +32,6 @@ public class Installer : MonoBehaviour
         ConfigureCamera();
 
         spawner.Configure(this);
-        totalDistance = CalculateDistance();
-        PartDistance();
-        TotalLayersInMusic();
     }
 
     private void ConfigureCamera()
@@ -68,10 +66,10 @@ public class Installer : MonoBehaviour
         _player.SetSkill(skillEpecific);
         _player.tag = "Player";
         _player.name = "Player";
-        //Debug.Log($"objetivePlayer.transform.position {objetivePlayer.transform.position}");
         _player.SetObjetive(objetivePlayer.transform.position);
         _player.transform.position = transform.position;
         _player.IsThePlayer();
+        _player.CalculatingDistanceForLayers(pointFares);
     }
 
     public IEmployee GetPlayer()

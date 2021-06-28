@@ -58,7 +58,7 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 var distance = totalDistance / partToDistance;
                 var calculateDistance = (int) (CalculateDistance()) / parts;
-                Debug.Log($"distance {distance} variante {calculateDistance}");
+                //Debug.Log($"totalDistance {totalDistance} distance {distance} variante {calculateDistance} CalculateDistance() {CalculateDistance()} parts {parts} partToDistance {partToDistance}");
                 var totalLayers = distance - calculateDistance;
                 if (totalLayers <= 0)
                 {
@@ -69,7 +69,7 @@ public class Employee : MonoBehaviour, IEmployee
 
         private float CalculateDistance()
         {
-                return (_objective - transform.position).magnitude;
+                return (_objective - _pointMoreFar).magnitude;
         }
 
         public string Id => id.Value;
@@ -141,6 +141,10 @@ public class Employee : MonoBehaviour, IEmployee
                 if (IsEnemy)
                 {
                         anim.SetFloat("speed", rb.velocity.magnitude);               
+                }
+                else if(isThePlayer)
+                {
+                        TotalLayersInMusic();
                 }
                 _movement.Move();
                 //transform.position = rb.gameObject.transform.position;
@@ -230,6 +234,7 @@ public class Employee : MonoBehaviour, IEmployee
         private float force;
         private bool isThePlayer;
         private NavMeshAgent _navMeshAgent;
+        private Vector3 _pointMoreFar;
 
         public void CreateObject(GameObject figure, float force)
         {
@@ -321,5 +326,13 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 isThePlayer = true;
                 _navMeshAgent.enabled = false;
+        }
+
+        public void CalculatingDistanceForLayers(Transform pointMoreFar)
+        {
+                _pointMoreFar = pointMoreFar.position;
+                totalDistance = CalculateDistance();
+                PartDistance();
+                TotalLayersInMusic();
         }
 }
