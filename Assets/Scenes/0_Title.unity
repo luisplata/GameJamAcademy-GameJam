@@ -218,7 +218,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
 --- !u!114 &85220193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 1
+  music: Music_Menu
 --- !u!1 &1066005218
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +703,6 @@ GameObject:
   - component: {fileID: 1066005221}
   - component: {fileID: 1066005220}
   - component: {fileID: 1066005223}
-  - component: {fileID: 1066005224}
   m_Layer: 5
   m_Name: BTN_Play
   m_TagString: Untagged
@@ -785,19 +785,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
-      - m_Target: {fileID: 1066005224}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1066005221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,19 +836,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c173a19aa8c40e3a3be70c2425b779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1066005224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066005218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b30bf1368bc335747a544cb6c02be7ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneIndex: 1
 --- !u!1 &1235384054
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +849,6 @@ GameObject:
   - component: {fileID: 1235384057}
   - component: {fileID: 1235384056}
   - component: {fileID: 1235384059}
-  - component: {fileID: 1235384060}
   m_Layer: 5
   m_Name: BTN_Exit
   m_TagString: Untagged
@@ -957,19 +931,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1235384060}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
-        m_MethodName: ExitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1235384057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,19 +982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c173a19aa8c40e3a3be70c2425b779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1235384060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235384054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b30bf1368bc335747a544cb6c02be7ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneIndex: 0
 --- !u!1 &1583821811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,38 +1600,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 33719395, guid: ed774abea3835b64b89b326823880bfd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1466.019
-      objectReference: {fileID: 0}
-    - target: {fileID: 33719395, guid: ed774abea3835b64b89b326823880bfd, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 822.907
-      objectReference: {fileID: 0}
-    - target: {fileID: 361475308, guid: ed774abea3835b64b89b326823880bfd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 700.317
-      objectReference: {fileID: 0}
-    - target: {fileID: 361475308, guid: ed774abea3835b64b89b326823880bfd, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 175.079
-      objectReference: {fileID: 0}
-    - target: {fileID: 361475308, guid: ed774abea3835b64b89b326823880bfd, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 361475308, guid: ed774abea3835b64b89b326823880bfd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 361475309, guid: ed774abea3835b64b89b326823880bfd, type: 3}
-      propertyPath: m_fontSize
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 361475309, guid: ed774abea3835b64b89b326823880bfd, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 64
-      objectReference: {fileID: 0}
+    - target: {fileID: 1540463692, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8640835416984563264, guid: 9ab1dfd74a8dd42dd91c6f4664e5404c, type: 2}
     - target: {fileID: 958286650563787096, guid: ed774abea3835b64b89b326823880bfd, type: 3}
       propertyPath: m_Name
       value: ServiceLocator
@@ -1731,5 +1652,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 958286651112215409, guid: ed774abea3835b64b89b326823880bfd, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 8640835416984563264, guid: 9ab1dfd74a8dd42dd91c6f4664e5404c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed774abea3835b64b89b326823880bfd, type: 3}

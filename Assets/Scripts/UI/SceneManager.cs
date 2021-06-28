@@ -1,17 +1,20 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
     [SerializeField] private int sceneIndex;
+    [SerializeField] private string music;
 
     private void Awake()
     {
         QualitySettings.vSyncCount = 1;
         Application.targetFrameRate = 60;
+    }
+
+    private void Start()
+    {
+        ServiceLocator.Instance.GetService<IMusic>().StartMusic(music);
     }
 
     public void LoadScene(int character)

@@ -31,10 +31,6 @@ public class Employee : MonoBehaviour, IEmployee
 
         public bool IsEnemy { get; private set; }
 
-        private void Start()
-        {
-                _navMeshAgent = GetComponent<NavMeshAgent>();
-        }
 
         private void Awake()
         {
@@ -45,6 +41,7 @@ public class Employee : MonoBehaviour, IEmployee
                 _actionToPlayer = new ActionToPlayer(this);
                 employeeMono.Config(this);
                 timeToColdDownToUseSkill = 10;
+                _navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
         public string Id => id.Value;
@@ -291,5 +288,6 @@ public class Employee : MonoBehaviour, IEmployee
         public void IsThePlayer()
         {
                 isThePlayer = true;
+                _navMeshAgent.enabled = false;
         }
 }

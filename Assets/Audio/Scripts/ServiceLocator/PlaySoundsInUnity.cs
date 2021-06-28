@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossScream, IUiSound,ISoundToCrash
+public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossScream, IUiSound,ISoundToCrash, IMusic
 {
-    [SerializeField] AudioSource m_AudioSource;
+    [SerializeField] AudioSource m_AudioSource, audioSourceForMusic;
 
     [SerializeField] List<AudioClip> m_SoundsToPlay;
 
@@ -193,16 +193,37 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
 
     public void SoundToSupport()
     {
+        var bossScream = GetRandomAudioByName("GJA_NPC_AllySupport");
+
+        PlayShortSoundOnce(bossScream.name);
+    }
+
+    private AudioClip GetRandomAudioByName(string name)
+    {
         List<AudioClip> bossScream = new List<AudioClip>();
         foreach (var clip in m_SoundsToPlay)
         {
-            if (clip.name.Contains("GJA_NPC_AllySupport"))
+            if (clip.name.Contains(name))
             {
                 bossScream.Add(clip);
             }
         }
-        var random = Random.Range(0, bossScream.Count);
 
-        PlayShortSoundOnce(bossScream[random].name);
+        var random = Random.Range(0, bossScream.Count);
+        return bossScream[random];
+    }
+
+    public void StartMusic(string music)
+    {
+        audioSourceForMusic.clip = GetRandomAudioByName(music);
+        audioSourceForMusic.loop = true;
+        audioSourceForMusic.Play();
+    }
+
+    public void Stop()
+    {
+        audioSourceForMusic.Stop();
+        audioSourceForMusic.loop = false;
+        audioSourceForMusic.clip = null;
     }
 }
