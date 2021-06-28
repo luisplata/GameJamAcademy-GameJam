@@ -307,9 +307,9 @@ public class Employee : MonoBehaviour, IEmployee
 
         public void LaunchTheBook()
         {
-                var bookInstantiate = Instantiate(book);
-                bookInstantiate.transform.position = positionToSpawnBook.position;
-                bookInstantiate.GetComponent<Rigidbody>().AddForce(Vector3.up * forceToLaunch);
+                //var bookInstantiate = Instantiate(book);
+                //bookInstantiate.transform.position = positionToSpawnBook.position;
+                //bookInstantiate.GetComponent<Rigidbody>().AddForce(Vector3.up * forceToLaunch);
         }
 
         public Transform GetPointForTheCamera()
