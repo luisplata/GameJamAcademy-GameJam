@@ -6,8 +6,7 @@ public class IAEnemy : MonoBehaviour
 {
     [SerializeField] private Transform playerTest;
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Vector3 target;
-    [SerializeField] private float maxDistance=1f;
+    private Vector3 target;
 
     private void Start()
     {
