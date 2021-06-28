@@ -65,7 +65,7 @@ public class Installer : MonoBehaviour
         _player.SetSkill(skillEpecific);
         _player.tag = "Player";
         _player.name = "Player";
-        Debug.Log($"objetivePlayer.transform.position {objetivePlayer.transform.position}");
+        //Debug.Log($"objetivePlayer.transform.position {objetivePlayer.transform.position}");
         _player.SetObjetive(objetivePlayer.transform.position);
         _player.transform.position = transform.position;
         _player.IsThePlayer();

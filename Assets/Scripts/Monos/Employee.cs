@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum EmployeeId
 {
@@ -61,6 +62,11 @@ public class Employee : MonoBehaviour, IEmployee
                 Destroy(gameObject,10);
         }
 
+        public void SetPointToGo(Vector3 tranformToGoOpponent)
+        {
+                GetComponent<NavMeshAgent>().destination = tranformToGoOpponent;
+        }
+
         public void SetSkill(ISkill s)
         {
                 _skill = s;
@@ -100,8 +106,12 @@ public class Employee : MonoBehaviour, IEmployee
 
         private void Update()
         {
+                if (IsEnemy)
+                {
+                        anim.SetFloat("speed", rb.velocity.magnitude);               
+                }
                 _movement.Move();
-                transform.position = rb.gameObject.transform.position;
+                //transform.position = rb.gameObject.transform.position;
         }
 
         public void ConvertAli(GameObject ali)

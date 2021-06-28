@@ -10,12 +10,13 @@ public class OpponentMovement : Movement
     {
         _player = player;
         _maxDistanceToClose = maxDistanceToClose;
-        Debug.Log($"maxDistanceToClose {maxDistanceToClose}");
+        //Debug.Log($"maxDistanceToClose {maxDistanceToClose}");
+        
     }
 
     public override void Move()
     {
-        var diff = _player.GetTargetToOpponents() - _employee.GetPosition();
+        /*var diff = _player.GetTargetToOpponents() - _employee.GetPosition();
         var listToOtherOpponents = _employee.GetListToOtherOpponents();
         if (diff.sqrMagnitude < _maxDistanceToClose && listToOtherOpponents.Count > 0)
         {
@@ -26,6 +27,7 @@ public class OpponentMovement : Movement
             }
             diff.y = 0;
         }
-        _employee.Move(diff.normalized * speed);
+        _employee.Move(diff.normalized * speed);*/
+        _employee.SetPointToGo(_player.GetTargetToOpponents());
     }
 }

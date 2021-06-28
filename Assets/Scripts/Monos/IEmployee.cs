@@ -23,4 +23,5 @@ public interface IEmployee
     GameObject GetTargetForFind();
     ISkill GetSkill();
     void StartToSkill();
+    void SetPointToGo(Vector3 tranformToGoOpponent);
 }
