@@ -30,8 +30,7 @@ public class CircumferenceOfEnemy : MonoBehaviour, ICircumferenceOfEnemy
     public void Rotate()
     {
         var targetDir = _employee.GetObjective() - _employee.GetPosition();
-        /*var angle = Vector3.Angle(targetDir, -transform.forward);
-        pointToObject.transform.eulerAngles = new Vector3(0, angle, 0);*/
+        transform.position = _employee.GetPosition();
         Rotating(targetDir.x, targetDir.z);
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossScream, IUiSound,ISoundToCrash, IMusic
+public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossScream, IUiSound,ISoundToCrash, IMusic, IStepFoot
 {
     [SerializeField] AudioSource m_AudioSource, audioSourceForMusic;
 

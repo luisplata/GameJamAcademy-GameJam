@@ -23,6 +23,7 @@ namespace Audio
             ServiceLocator.Instance.RegisterService<IUiSound>(m_PlaySoundsInUnity);
             ServiceLocator.Instance.RegisterService<ISoundToCrash>(m_PlaySoundsInUnity);
             ServiceLocator.Instance.RegisterService<IMusic>(m_PlaySoundsInUnity);
+            ServiceLocator.Instance.RegisterService<IStepFoot>(m_PlaySoundsInUnity);
             ServiceLocator.Instance.RegisterService<IStatusGame>(statis);
 
             DontDestroyOnLoad(gameObject);

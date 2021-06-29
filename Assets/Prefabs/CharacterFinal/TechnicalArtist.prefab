@@ -995,12 +995,12 @@ GameObject:
   - component: {fileID: 9120196608485439007}
   - component: {fileID: 8726791920749664375}
   - component: {fileID: 328241222509509737}
+  - component: {fileID: -6357363384368633771}
   - component: {fileID: 5655212366641190256}
+  - component: {fileID: 1660725719}
   - component: {fileID: 1605802881128219532}
   - component: {fileID: 4873139929607172766}
   - component: {fileID: 7198206614490889608}
-  - component: {fileID: -6357363384368633771}
-  - component: {fileID: 1660725719}
   - component: {fileID: 9210268833456030391}
   - component: {fileID: 7046430339133541888}
   m_Layer: 0
@@ -1074,6 +1074,22 @@ MonoBehaviour:
   anim: {fileID: 8726791920749664375}
   pointToSpawnSkill: {fileID: 5738519440662848954}
   pointForTheCamera: {fileID: 1223674755320852171}
+--- !u!114 &-6357363384368633771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492279070200917157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785b8fdbcfff47298f29ff002b0183a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointToObject: {fileID: 3538916490165128642}
+  targetToOpponents: {fileID: 4445299697401675746}
+  multiply: 0
+  rb: {fileID: 8545638530660508547}
 --- !u!114 &5655212366641190256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,6 +1102,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496b0cf89a73e3d4690843fcdbf037bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1660725719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8492279070200917157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2b0b0bb45ba47ff86affb79bd73219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlaySoundsInUnity: {fileID: 0}
+  m_AudioSource: {fileID: 9210268833456030391}
+  m_Output: {fileID: 8640835416984563264, guid: 9ab1dfd74a8dd42dd91c6f4664e5404c, type: 2}
+  m_Volume: 0.5
+  m_VolumeVariation: 0
 --- !u!54 &1605802881128219532
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1129,39 +1162,6 @@ CapsuleCollider:
   m_Height: 1.4121051
   m_Direction: 1
   m_Center: {x: 0.002360344, y: 0.7206503, z: 0}
---- !u!114 &-6357363384368633771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8492279070200917157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785b8fdbcfff47298f29ff002b0183a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointToObject: {fileID: 3538916490165128642}
-  targetToOpponents: {fileID: 4445299697401675746}
-  multiply: 0
-  rb: {fileID: 8545638530660508547}
---- !u!114 &1660725719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8492279070200917157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2b0b0bb45ba47ff86affb79bd73219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlaySoundsInUnity: {fileID: 0}
-  m_AudioSource: {fileID: 9210268833456030391}
-  m_Output: {fileID: 8640835416984563264, guid: 9ab1dfd74a8dd42dd91c6f4664e5404c, type: 2}
-  m_Volume: 0.5
-  m_VolumeVariation: 0
 --- !u!82 &9210268833456030391
 AudioSource:
   m_ObjectHideFlags: 0

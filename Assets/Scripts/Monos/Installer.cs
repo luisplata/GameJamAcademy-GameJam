@@ -32,6 +32,8 @@ public class Installer : MonoBehaviour
         ConfigureCamera();
 
         spawner.Configure(this);
+        
+        ServiceLocator.Instance.GetService<IMusic>().Stop();
     }
 
     private void ConfigureCamera()

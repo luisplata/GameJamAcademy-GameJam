@@ -442,9 +442,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!1 &4167084914580024512
 GameObject:
@@ -845,10 +845,10 @@ GameObject:
   - component: {fileID: -4431187940852437638}
   - component: {fileID: -4332374909211724627}
   - component: {fileID: -2200028481490015216}
+  - component: {fileID: 2115912595}
   - component: {fileID: 21901468124671343}
   - component: {fileID: 5329596186974007118}
   - component: {fileID: 2115912603}
-  - component: {fileID: 2115912595}
   - component: {fileID: 7758700793946098467}
   - component: {fileID: 4374407756774066396}
   m_Layer: 0
@@ -950,6 +950,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496b0cf89a73e3d4690843fcdbf037bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2115912595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503391054162836658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2b0b0bb45ba47ff86affb79bd73219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AudioSource: {fileID: 2115912603}
+  m_Output: {fileID: 8640835416984563264, guid: 9ab1dfd74a8dd42dd91c6f4664e5404c, type: 2}
+  m_Volume: 0.5
+  m_VolumeVariation: 0.2
 --- !u!54 &21901468124671343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1075,23 +1091,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2115912595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6503391054162836658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2b0b0bb45ba47ff86affb79bd73219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlaySoundsInUnity: {fileID: 0}
-  m_AudioSource: {fileID: 2115912603}
-  m_Output: {fileID: 8640835416984563264, guid: 9ab1dfd74a8dd42dd91c6f4664e5404c, type: 2}
-  m_Volume: 0.5
-  m_VolumeVariation: 0.2
 --- !u!136 &7758700793946098467
 CapsuleCollider:
   m_ObjectHideFlags: 0

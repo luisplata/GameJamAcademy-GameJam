@@ -252,7 +252,7 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 var instantiate = Instantiate(figure);
                 instantiate.transform.position = pointToSpawnSkill.position;
-                instantiate.GetComponent<Rigidbody>().AddForce(Vector3.forward * force,ForceMode.Impulse);
+                instantiate.GetComponent<Rigidbody>().AddForce(transform.forward * force,ForceMode.Impulse);
                 if (IsEnemy)
                 {
                         instantiate.gameObject.AddComponent<InteractiveToDestroyed>();
