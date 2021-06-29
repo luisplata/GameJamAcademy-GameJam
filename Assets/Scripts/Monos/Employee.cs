@@ -56,20 +56,26 @@ public class Employee : MonoBehaviour, IEmployee
 
         public void TotalLayersInMusic()
         {
-                var distance = totalDistance / partToDistance;
-                var calculateDistance = (int) (CalculateDistance()) / parts;
-                //Debug.Log($"totalDistance {totalDistance} distance {distance} variante {calculateDistance} CalculateDistance() {CalculateDistance()} parts {parts} partToDistance {partToDistance}");
+                var totalLayers = CalculateTotalLayers();
+
+                ServiceLocator.Instance.GetService<IMusic>().MusicForLayers(totalLayers);
+        }
+
+        private int CalculateTotalLayers()
+        {
+                var distance = (int) (totalDistance / partToDistance);
+                var calculateDistance = (int) (CalculateDistance() / partToDistance);
                 var totalLayers = distance - calculateDistance;
                 if (totalLayers <= 0)
                 {
                         totalLayers = 1;
                 }
-                Debug.Log($"total layers in game {totalLayers}");
+                return totalLayers;
         }
 
         private float CalculateDistance()
         {
-                return (_objective - _pointMoreFar).magnitude;
+                return (_objective - transform.position).sqrMagnitude;
         }
 
         public string Id => id.Value;
@@ -96,7 +102,7 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 _navMeshAgent.destination = tranformToGoOpponent;
                 var velocityNav = _navMeshAgent.velocity;
-                Rotating(velocityNav.x, velocityNav.y);
+                Rotating(velocityNav.x, velocityNav.z);
         }
 
         public void SetSkill(ISkill s)
@@ -234,7 +240,6 @@ public class Employee : MonoBehaviour, IEmployee
         private float force;
         private bool isThePlayer;
         private NavMeshAgent _navMeshAgent;
-        private Vector3 _pointMoreFar;
 
         public void CreateObject(GameObject figure, float force)
         {
@@ -302,6 +307,8 @@ public class Employee : MonoBehaviour, IEmployee
         {
                 anim.SetTrigger("give");
                 ServiceLocator.Instance.GetService<ITriggerSoundEffect>().PlayShortSoundOnce("Music_Win_bpm162_4-4");
+                ServiceLocator.Instance.GetService<IMusic>().StopMusicForLayers();
+
         }
 
         public void FinishAnimationToFinishGame()
@@ -330,9 +337,9 @@ public class Employee : MonoBehaviour, IEmployee
 
         public void CalculatingDistanceForLayers(Transform pointMoreFar)
         {
-                _pointMoreFar = pointMoreFar.position;
-                totalDistance = CalculateDistance();
+                totalDistance = (_objective - pointMoreFar.position).sqrMagnitude;
                 PartDistance();
+                ServiceLocator.Instance.GetService<IMusic>().StartMusicForLayers(5);
                 TotalLayersInMusic();
         }
 }

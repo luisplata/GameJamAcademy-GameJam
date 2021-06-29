@@ -32,8 +32,9 @@ public class FireComponent : MonoBehaviour
             //Game Over
             ServiceLocator.Instance.GetService<ITriggerSoundEffect>().PlayShortSoundOnce("Music_Lose_bpm162_4-4");
             ServiceLocator.Instance.GetService<IStatusGame>().GameOver();
+            ServiceLocator.Instance.GetService<IMusic>().StopMusicForLayers();
         }
-        if (other.gameObject.CompareTag("Interac") || other.gameObject.CompareTag("Opponent"))
+        if (other.gameObject.CompareTag("Interac") || other.gameObject.CompareTag("Opponent") || other.gameObject.CompareTag("Ali"))
         {
             ServiceLocator.Instance.GetService<ISoundToCrash>().SoundToCrash();
             Destroy(other.gameObject);

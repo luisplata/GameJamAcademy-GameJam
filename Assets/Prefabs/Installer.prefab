@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configuration: {fileID: 11400000, guid: d147b6be88d86734598efc7414c0972b, type: 2}
-  speedPlayer: 10
+  speedPlayer: 200
   skillInstantiate: {fileID: 3343658928483949706, guid: 57eb56344510f9440aca94f0e6f93d48, type: 3}
-  employeeid: {fileID: 11400000, guid: 852bc15ad8ad70d44ad4a3c2e6c58010, type: 2}
+  employeeid: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
   artist: {fileID: 11400000, guid: 852bc15ad8ad70d44ad4a3c2e6c58010, type: 2}
   technicalArtist: {fileID: 11400000, guid: fed8b1dc1c5b79945b2b5383d0ca6b43, type: 2}
   virtualCamera: {fileID: 0}
@@ -56,3 +56,4 @@ MonoBehaviour:
   tecnicalArtis: {fileID: 11400000, guid: 36a7876c2fd5a5443ad049b85f4ad38b, type: 2}
   prefabToBellseboss: {fileID: 0}
   force: 0
+  pointFares: {fileID: 0}

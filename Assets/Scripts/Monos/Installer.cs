@@ -16,7 +16,7 @@ public class Installer : MonoBehaviour
     [SerializeField] private GeometricsFigureForTheGraphicConfiguration graphicConfiguration, tecnicalArtis;
     [SerializeField] private GameObject prefabToBellseboss;
     [SerializeField] private float force;
-    private Transform pointFares;
+    [SerializeField] private Transform pointFares;
     private Employee _player;
     private GameObject _bellsebossInstantiate;
     

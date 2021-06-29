@@ -5,7 +5,9 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
 {
     [SerializeField] AudioSource m_AudioSource, audioSourceForMusic;
 
-    [SerializeField] List<AudioClip> m_SoundsToPlay;
+    [SerializeField] private List<AudioSource> musicForLayers;
+
+    [SerializeField] List<AudioClip> m_SoundsToPlay, musicForLayersClips;
 
     Dictionary<string, AudioClip> m_SoundDictionary;
 
@@ -228,5 +230,33 @@ public class PlaySoundsInUnity : MonoBehaviour, ITriggerSoundEffect, ISoundBossS
         audioSourceForMusic.Stop();
         audioSourceForMusic.loop = false;
         audioSourceForMusic.clip = null;
+    }
+    public void StartMusicForLayers(int totalLayers)
+    {
+        for (var i = 0; i < totalLayers; i++)
+        {
+            musicForLayers[i].clip = musicForLayersClips[i];
+            musicForLayers[i].Play();
+            musicForLayers[i].loop = true;
+            musicForLayers[i].mute = true;
+        }
+    }
+    public void MusicForLayers(int totalLayers)
+    {
+        for (var i = 0; i < totalLayers; i++)
+        {
+            musicForLayers[i].mute = false;
+        }
+    }
+
+    public void StopMusicForLayers()
+    {
+        for (var i = 0; i < 6; i++)
+        {
+            musicForLayers[i].clip = null;
+            musicForLayers[i].Stop();
+            musicForLayers[i].loop = false;
+            musicForLayers[i].mute = true;
+        }
     }
 }
